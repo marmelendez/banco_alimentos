@@ -14,6 +14,8 @@
     <string name="askForHelp">Solicitar ayuda</string>
     <string name="pickupPoints">Centros de acopio </string>
     <string name="volunteers">Voluntarios</string>
+    <string name="amount">Monto a donar</string>
+    <string name="donation">Donar cantidad</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -18,6 +18,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:id="@+id/donationsAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_red_part"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donationsTitle">
+
+        <TextView
+            android:id="@+id/donationsTvAmount"
+            style="@style/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/amount" />
+
+        <EditText
+            android:id="@+id/donationsEtAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"
+            android:autofillHints="emailAddress"
+            android:backgroundTint="@color/orange"
+            android:hint="@string/amount"
+            android:minHeight="48dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"/>
+
+        <Button
+            android:id="@+id/donationsBtnDonate"
+            style="@style/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/donation"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/donationsTitle"
         style="@style/activity_title"
@@ -28,6 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/donationsMenuFragmentContainer"/>
+
 
     <!--<androidx.fragment.app.FragmentContainerView
         android:id="@+id/donationsFragmentContainer"
