@@ -1,0 +1,73 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.BancoDeAlimentos_Project" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="card_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:fontFamily">@font/raleway_black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="activity_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/raleway_black</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <!--Estilos para titulos de pantallas-->
+    <style name="title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/raleway_bold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!--Estilos para etiquetas de pantallas-->
+    <style name="label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/nunito_semibold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!--Estilos para inputs o texto en general de pantallas-->
+    <style name="input">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--Estilos para botones de pantallas-->
+    <style name="button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@drawable/button_general</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/raleway_black</item>
+    </style>
+</resources>
