@@ -8,14 +8,20 @@ import mx.iv.bancodealimentos_project.fragments.LogInFragment
 import mx.iv.bancodealimentos_project.fragments.SignInFragment
 import mx.iv.bancodealimentos_project.databinding.ActivityRegisterBinding
 import mx.iv.bancodealimentos_project.fragments.MenuFragment
+import com.google.firebase.auth.FirebaseAuth
+
+
+
 
 class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragment.CallbackMenu  {
 
     private lateinit var binding: ActivityRegisterBinding // Nos permite acceder a las views del layout de la activity
     private lateinit var loginFragment: LogInFragment
     private lateinit var signInFragment: SignInFragment
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        mAuth = FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
