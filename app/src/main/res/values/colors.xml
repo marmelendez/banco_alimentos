@@ -13,4 +13,6 @@
     <color name="red">#E3032E</color>
     <color name="gray">#D5D5D5</color>
     <color name="transparent">#00000000</color>
+    <color name="paypal_blue">#253B80</color>
+    <color name="paypal_lightblue">#2997D8</color>
 </resources>

@@ -58,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/donation"
+            android:drawableEnd="@drawable/ic_paypal"
             android:layout_marginTop="16dp" />
 
     </LinearLayout>
