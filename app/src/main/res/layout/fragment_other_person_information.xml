@@ -23,7 +23,7 @@
         android:layout_marginStart="96dp"
         android:layout_marginTop="311dp"
         android:layout_marginBottom="296dp"
-        android:text="DAtos de la otra persona"
+        android:text="Datos de la otra persona"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
