@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange"
-    tools:context=".DonationsActivity">
+    tools:context=".PaymentDetailsActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/donationsMenuFragmentContainer"
+        android:id="@+id/payDetailMenuFragmentContainer"
         android:name="mx.iv.bancodealimentos_project.fragments.MenuFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/donationsAmount"
+        android:id="@+id/payDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_red_part"
@@ -28,63 +28,52 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donationsTitle">
+        app:layout_constraintTop_toBottomOf="@+id/payDetailTitle">
 
         <TextView
-            android:id="@+id/donationsTvAmount"
+            android:id="@+id/payDetailTvID"
             style="@style/label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/amount" />
+            android:text="@string/paymentDetails"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/donationsEtAmount"
+        <TextView
+            android:id="@+id/payDetailTvAmount"
+            style="@style/label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:layout_marginTop="8dp"
-            android:autofillHints="emailAddress"
-            android:backgroundTint="@color/orange"
-            android:hint="@string/amount"
-            android:minHeight="48dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/gray"/>
+            android:text="@string/paymentDetails"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/payDetailTvID" />
 
-        <Button
-            android:id="@+id/donationsBtnDonate"
-            style="@style/button"
+        <TextView
+            android:id="@+id/payDetailTvStatus"
+            style="@style/label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/donation"
-            android:drawableEnd="@drawable/ic_paypal"
-            android:layout_marginTop="16dp" />
+            android:text="@string/paymentDetails"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/payDetailTvAmount" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/donationsTitle"
+        android:id="@+id/payDetailTitle"
         style="@style/activity_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/donations"
+        android:text="@string/paymentDetails"
         android:layout_marginVertical="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donationsMenuFragmentContainer"/>
-
-
-    <!--<androidx.fragment.app.FragmentContainerView
-        android:id="@+id/donationsFragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_red_part"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donationsTitle"
-        app:layout_constraintVertical_bias="0.0" />-->
+        app:layout_constraintTop_toBottomOf="@+id/payDetailMenuFragmentContainer"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

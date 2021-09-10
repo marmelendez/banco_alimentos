@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2651282051282051" />
         <entry key="app/src/main/res/drawable/ic_location.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/drawable/ic_menu.xml" value="0.2651282051282051" />
+        <entry key="app/src/main/res/drawable/ic_paypal.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/ic_people.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/drawable/ic_return.xml" value="0.2651282051282051" />
         <entry key="app/src/main/res/drawable/ic_volunteer.xml" value="0.26927083333333335" />
@@ -24,6 +25,7 @@
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_inicio.xml" value="0.2328125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.27247191011235955" />
+        <entry key="app/src/main/res/layout/activity_payment_details.xml" value="0.2390625" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_help_options.xml" value="0.2390625" />
         <entry key="app/src/main/res/layout/fragment_iniciar_sesion.xml" value="0.253125" />
