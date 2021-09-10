@@ -13,7 +13,7 @@
               android:name=".PaymentDetailsActivity"
               android:exported="true" />  
         <activity
-              android:name=".CollectionPoint"
+              android:name=".CollectionPointActivity"
               android:exported="true" />
         <activity
             android:name=".DonationsActivity"

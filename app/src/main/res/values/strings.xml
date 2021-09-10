@@ -17,6 +17,9 @@
     <string name="amount">Monto a donar</string>
     <string name="donation">Donar cantidad</string>
     <string name="paymentDetails">Detalles de donación</string>
+    <string name="collectionPoints">"Puntos de \n recolección"</string>
+    <string name="askCollection">Solicitar recoleccion</string>
+    <string name="listProductos">Productos que puedes donar: </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

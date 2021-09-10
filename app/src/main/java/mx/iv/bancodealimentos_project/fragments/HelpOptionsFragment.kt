@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
-import mx.iv.bancodealimentos_project.CollectionPoint
+import mx.iv.bancodealimentos_project.CollectionPointActivity
 import mx.iv.bancodealimentos_project.DonationsActivity
 import mx.iv.bancodealimentos_project.R
 
@@ -59,7 +59,7 @@ class HelpOptionsFragment : Fragment() {
 
         btnPickup.setOnClickListener {
             Toast.makeText(it.context, "RECOLECCION", Toast.LENGTH_SHORT).show()
-            val intent = Intent(it.context, CollectionPoint::class.java)
+            val intent = Intent(it.context, CollectionPointActivity::class.java)
             startActivity(intent)
         }
 
