@@ -42,7 +42,7 @@ class LogInFragment : Fragment() {
         }
 
         btnSignIn.setOnClickListener {
-            listener?.runSignIn()
+            listener?.replaceFrag()
         }
 
         return view
@@ -61,6 +61,7 @@ class LogInFragment : Fragment() {
 
     interface Callback {
         fun runLogIn()
+        fun replaceFrag()
         fun runSignIn()
     }
 

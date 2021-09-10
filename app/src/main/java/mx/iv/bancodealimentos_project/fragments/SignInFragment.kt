@@ -40,11 +40,11 @@ class SignInFragment : Fragment() {
         val btnReturn = view.findViewById<TextView>(R.id.registerTvReturn)
 
         btnSignIn.setOnClickListener {
-            listener?.runLogIn()
+            listener?.runSignIn()
         }
 
         btnReturn.setOnClickListener {
-            listener?.runSignIn()
+            listener?.replaceFrag()
         }
 
         return view

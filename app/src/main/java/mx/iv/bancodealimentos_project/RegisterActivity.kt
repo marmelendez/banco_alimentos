@@ -56,11 +56,18 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
 
     // Implementa metodos de la clase Callback (declarada en Fragments.LogInFragment)
     override fun runLogIn() {
-        val intent = Intent(this, HomeActivity::class.java)
-        startActivity(intent)
+        //firebase
+
+
+        /*val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)*/
     }
 
     override fun runSignIn() {
+        //firebase
+    }
+
+    override fun replaceFrag() {
         replaceFragment()
     }
 
