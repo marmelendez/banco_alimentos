@@ -3,6 +3,35 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/bg_gradient.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/bg_round_corner.xml" value="0.15885416666666666" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/button_general.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/ic_about.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/ic_account.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/ic_food_bank.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/ic_help.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/ic_location.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/ic_menu.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/ic_people.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/ic_return.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/drawable/ic_volunteer.xml" value="0.19895833333333332" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/activity_aboutus.xml" value="0.1828125" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/activity_donations.xml" value="0.14270833333333333" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/activity_help.xml" value="0.14270833333333333" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/activity_home.xml" value="0.17" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/activity_main.xml" value="0.14270833333333333" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/activity_register.xml" value="0.14270833333333333" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/activity_ser_voluntario.xml" value="0.16875" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/activity_voluntarios.xml" value="0.1" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/activity_volunteer.xml" value="0.25" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/activity_volunteer2.xml" value="0.33" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/fragment_bee_voluntario.xml" value="0.2" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/fragment_help_options.xml" value="0.17" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/fragment_iniciar_sesion.xml" value="0.25" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/fragment_menu.xml" value="0.18" />
+        <entry key="..\:/Program Files (x86)/Android/banco_alimentos/app/src/main/res/layout/fragment_sign_in.xml" value="0.14270833333333333" />
         <entry key="app/src/main/res/drawable/background.xml" value="0.2651282051282051" />
         <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.2651282051282051" />
         <entry key="app/src/main/res/drawable/button_general.xml" value="0.2651282051282051" />
