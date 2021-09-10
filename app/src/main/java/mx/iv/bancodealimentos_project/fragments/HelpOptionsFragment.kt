@@ -11,6 +11,7 @@ import android.widget.Toast
 import mx.iv.bancodealimentos_project.CollectionPoint
 import mx.iv.bancodealimentos_project.DonationsActivity
 import mx.iv.bancodealimentos_project.R
+import mx.iv.bancodealimentos_project.SolicitarAyuda
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,6 +66,8 @@ class HelpOptionsFragment : Fragment() {
 
         btnAsk.setOnClickListener {
             Toast.makeText(it.context, "SOLICITAR AYUDA", Toast.LENGTH_SHORT).show()
+            val intent = Intent(it.context, SolicitarAyuda::class.java)
+            startActivity(intent)
         }
 
         return view
