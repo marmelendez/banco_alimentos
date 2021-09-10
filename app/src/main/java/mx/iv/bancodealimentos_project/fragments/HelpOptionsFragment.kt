@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import mx.iv.bancodealimentos_project.CollectionPointActivity
 import mx.iv.bancodealimentos_project.DonationsActivity
 import mx.iv.bancodealimentos_project.R
@@ -44,10 +45,10 @@ class HelpOptionsFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_help_options, container, false)
 
-        val btnDonations = view.findViewById<ImageView>(R.id.helpIvDonations)
-        val btnVolunteers = view.findViewById<ImageView>(R.id.helpIvVolunteers)
-        val btnPickup = view.findViewById<ImageView>(R.id.helpIvPickup)
-        val btnAsk = view.findViewById<ImageView>(R.id.helpIvAskHelp)
+        val btnDonations = view.findViewById<CardView>(R.id.helpCvDonations)
+        val btnVolunteers = view.findViewById<CardView>(R.id.helpCvVolunteers)
+        val btnPickup = view.findViewById<CardView>(R.id.helpCvPickup)
+        val btnAsk = view.findViewById<CardView>(R.id.helpCvAskHelp)
 
         btnDonations.setOnClickListener {
             val intent = Intent(it.context, DonationsActivity::class.java)
