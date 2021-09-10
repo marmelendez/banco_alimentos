@@ -16,19 +16,19 @@ class HomeActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         // BOTON SOBRE EL BANCO
-        binding.homeIvAbout.setOnClickListener {
+        binding.homeCvAbout.setOnClickListener {
             Toast.makeText(this, "Pronto contaremos con este apartado",Toast.LENGTH_SHORT).show()
         }
 
         // BOTON COMO AYUDAR
-        binding.homeIvHelp.setOnClickListener {
+        binding.homeCvHelp.setOnClickListener {
             val intent = Intent(this, HelpActivity::class.java)
             startActivity(intent)
         }
 
         // BOTON MI CUENTA
         // Al dar clic al boton de Mi cuenta te redirige a la pagina de iniciar sesión
-        binding.homeIvAccount.setOnClickListener {
+        binding.homeCvAccount.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
