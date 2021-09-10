@@ -10,10 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.widget.PopupMenu
-import mx.iv.bancodealimentos_project.AboutUsActivity
-import mx.iv.bancodealimentos_project.DonationsActivity
-import mx.iv.bancodealimentos_project.HelpActivity
-import mx.iv.bancodealimentos_project.R
+import mx.iv.bancodealimentos_project.*
 import java.lang.RuntimeException
 
 // TODO: Rename parameter arguments, choose names that match
@@ -56,6 +53,10 @@ class MenuFragment : Fragment() {
             popupMenu.menuInflater.inflate(R.menu.menu_general, popupMenu.menu)
             popupMenu.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {
+                    R.id.menu_home -> {
+                        val intent = Intent(it.context, HomeActivity::class.java)
+                        startActivity(intent)
+                    }
                     R.id.menu_about -> {
                         Toast.makeText(it.context, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
                         val intent = Intent(it.context, AboutUsActivity::class.java)

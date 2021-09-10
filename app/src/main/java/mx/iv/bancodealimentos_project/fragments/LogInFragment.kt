@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import mx.iv.bancodealimentos_project.R
 import java.lang.RuntimeException
 
@@ -36,9 +37,11 @@ class LogInFragment : Fragment() {
 
         val btnLogIn = view.findViewById<Button>(R.id.loginBtnLogIn)
         val btnSignIn = view.findViewById<Button>(R.id.loginBtnSignIn)
+        val inputEmail = view.findViewById<EditText>(R.id.loginEtEmail)
+        val inputPassword = view.findViewById<EditText>(R.id.loginEtPassword)
 
         btnLogIn.setOnClickListener {
-            listener?.runLogIn()
+            listener?.runLogIn(inputEmail.text.toString(), inputPassword.text.toString())
         }
 
         btnSignIn.setOnClickListener {
@@ -60,9 +63,9 @@ class LogInFragment : Fragment() {
 
 
     interface Callback {
-        fun runLogIn()
         fun replaceFrag()
-        fun runSignIn()
+        fun runLogIn(email: String, password: String)
+        fun runSignIn(email: String, password: String)
     }
 
     companion object {

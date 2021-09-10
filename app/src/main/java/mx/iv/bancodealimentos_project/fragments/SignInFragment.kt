@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import mx.iv.bancodealimentos_project.R
 import java.lang.RuntimeException
 
@@ -38,9 +40,17 @@ class SignInFragment : Fragment() {
 
         val btnSignIn = view.findViewById<Button>(R.id.registerBtnSignIn)
         val btnReturn = view.findViewById<TextView>(R.id.registerTvReturn)
+        val inputEmail = view.findViewById<EditText>(R.id.registerEtEmail)
+        val inputPassword = view.findViewById<EditText>(R.id.registerEtPassword)
+        val inputConfirmPassword = view.findViewById<EditText>(R.id.registerEtConfirm)
 
         btnSignIn.setOnClickListener {
-            listener?.runSignIn()
+            if (inputPassword.text.toString() == inputConfirmPassword.text.toString()) {
+                listener?.runSignIn(inputEmail.text.toString(), inputPassword.text.toString())
+            } else {
+                Toast.makeText(it.context, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         btnReturn.setOnClickListener {

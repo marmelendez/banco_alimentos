@@ -3,7 +3,12 @@ package mx.iv.bancodealimentos_project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import mx.iv.bancodealimentos_project.fragments.LogInFragment
 import mx.iv.bancodealimentos_project.fragments.SignInFragment
 import mx.iv.bancodealimentos_project.databinding.ActivityRegisterBinding
@@ -14,11 +19,14 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
     private lateinit var binding: ActivityRegisterBinding // Nos permite acceder a las views del layout de la activity
     private lateinit var loginFragment: LogInFragment
     private lateinit var signInFragment: SignInFragment
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        auth = Firebase.auth
 
         // FRAGMENTO DE MENU
         // Muestra el fragmento de menu desde el inicio
@@ -55,16 +63,30 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
     }
 
     // Implementa metodos de la clase Callback (declarada en Fragments.LogInFragment)
-    override fun runLogIn() {
-        //firebase
-
-
-        /*val intent = Intent(this, HomeActivity::class.java)
-        startActivity(intent)*/
+    override fun runLogIn(email: String, password: String) {
+        Firebase.auth.signInWithEmailAndPassword(email,password)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    Log.d("FIREBASE", "Login exitoso")
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "${it.exception}", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
-    override fun runSignIn() {
-        //firebase
+    override fun runSignIn(email: String, password: String) {
+        Firebase.auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    Log.d("FIREBASE", "Registro exitoso")
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "${it.exception}", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     override fun replaceFrag() {
