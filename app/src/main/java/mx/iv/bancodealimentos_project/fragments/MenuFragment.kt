@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.widget.PopupMenu
+import mx.iv.bancodealimentos_project.AboutUsActivity
 import mx.iv.bancodealimentos_project.DonationsActivity
 import mx.iv.bancodealimentos_project.HelpActivity
 import mx.iv.bancodealimentos_project.R
@@ -55,7 +56,11 @@ class MenuFragment : Fragment() {
             popupMenu.menuInflater.inflate(R.menu.menu_general, popupMenu.menu)
             popupMenu.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {
-                    R.id.menu_about -> Toast.makeText(it.context, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
+                    R.id.menu_about -> {
+                        Toast.makeText(it.context, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(it.context, AboutUsActivity::class.java)
+                        startActivity(intent)
+                    }
                     R.id.menu_help -> {
                         val intent = Intent(it.context, HelpActivity::class.java)
                         startActivity(intent)

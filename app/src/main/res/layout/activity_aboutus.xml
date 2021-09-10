@@ -6,117 +6,101 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange"
-    tools:context=".activity_aboutus">
-
-
-    <TextView
-        android:id="@+id/donationsTitle"
-        style="@style/activity_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="123dp"
-        android:text="Nosotros"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </TextView>
+    tools:context=".AboutUsActivity">
 
     <ImageView
         android:id="@+id/volunteerIvLogo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="175dp"
+        android:contentDescription="@string/about"
         android:background="@drawable/voluntarios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </ImageView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donationsTitle"
-        app:layout_constraintVertical_bias="0.365">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/CvAbout2"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="8dp"
-            card_view:cardCornerRadius="20dp"
-            card_view:cardElevation="8dp">
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/CvAbout1"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginHorizontal="3dp"
-            android:layout_marginVertical="8dp"
-            card_view:cardCornerRadius="20dp"
-            card_view:cardElevation="8dp">
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="316dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donationsTitle"
-        app:layout_constraintVertical_bias="0.365">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/CvAbout3"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="8dp"
-            card_view:cardCornerRadius="20dp"
-            card_view:cardElevation="8dp">
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/CvAbout4"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginHorizontal="3dp"
-            android:layout_marginVertical="8dp"
-            card_view:cardCornerRadius="20dp"
-            card_view:cardElevation="8dp">
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/MenuAboutUs"
+        android:id="@+id/aboutUsCvMenuFragmentContainer"
         android:name="mx.iv.bancodealimentos_project.fragments.MenuFragment"
-        android:layout_width="379dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/aboutUsTitle"
+        style="@style/activity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:text="@string/about"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutUsCvMenuFragmentContainer">
+
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/aboutUsLLTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutUsTitle">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/aboutUsCv1"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            card_view:cardCornerRadius="20dp"
+            card_view:cardElevation="8dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/aboutUsCv2"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            card_view:cardCornerRadius="20dp"
+            card_view:cardElevation="8dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutUsLLTop">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/aboutUsCv3"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            card_view:cardCornerRadius="20dp"
+            card_view:cardElevation="8dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/aboutUsCv4"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            card_view:cardCornerRadius="20dp"
+            card_view:cardElevation="8dp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
