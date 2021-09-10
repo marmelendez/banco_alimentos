@@ -11,7 +11,7 @@ import android.widget.Toast
 import mx.iv.bancodealimentos_project.CollectionPointActivity
 import mx.iv.bancodealimentos_project.DonationsActivity
 import mx.iv.bancodealimentos_project.R
-import mx.iv.bancodealimentos_project.activity_volunteer2
+import mx.iv.bancodealimentos_project.VolunteerActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,10 +55,8 @@ class HelpOptionsFragment : Fragment() {
         }
 
         btnVolunteers.setOnClickListener {
-
-            val intent = Intent(it.context, activity_volunteer2::class.java)
+            val intent = Intent(it.context, VolunteerActivity::class.java)
             startActivity(intent)
-
         }
 
         btnPickup.setOnClickListener {

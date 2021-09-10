@@ -11,13 +11,13 @@
         android:theme="@style/Theme.BancoDeAlimentos_Project">
         <activity
 
-            android:name=".serVoluntarioAct"
+            android:name=".BeVolunteerActivity"
             android:exported="true" />
         <activity
             android:name=".activity_aboutus"
             android:exported="true" />
         <activity
-            android:name=".activity_volunteer2"
+            android:name=".VolunteerActivity"
             android:exported="true" />
         <activity
               android:name=".PaymentDetailsActivity"
