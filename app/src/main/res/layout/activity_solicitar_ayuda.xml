@@ -51,6 +51,7 @@
         android:layout_marginTop="8dp"
         android:background="#000E0101"
         android:backgroundTint="#FFFFFF"
+        android:onClick="onCheckboxClicked"
         android:text="Para mí"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -64,17 +65,10 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="#FFFFFF"
+        android:onClick="onCheckboxClicked"
         android:text="Para otra persona"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MeCheckBox" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/bg_red_part"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MeCheckBox" />
 
