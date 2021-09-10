@@ -21,7 +21,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [LaAyudaEs.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LaAyudaEs : Fragment() {
+class CheckboxFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -44,12 +44,10 @@ class LaAyudaEs : Fragment() {
         val checkbox1 = view.findViewById<CheckBox>(R.id.meCheckBox)
         val checkbox2 = view.findViewById<CheckBox>(R.id.elseCheckBox)
 
-        checkbox1.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
-            override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-                Toast.makeText(view.context, "Me picado", Toast.LENGTH_SHORT).show()
-                listener?.replaceParaMiFragment()
-            }
-        })
+        checkbox1.setOnCheckedChangeListener { buttonView, isChecked ->
+            Toast.makeText(view.context, "Me picado", Toast.LENGTH_SHORT).show()
+            listener?.replaceParaMiFragment()
+        }
         return view
     }
 
@@ -69,7 +67,7 @@ class LaAyudaEs : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            LaAyudaEs().apply {
+            CheckboxFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

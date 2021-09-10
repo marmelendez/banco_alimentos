@@ -8,7 +8,7 @@
     tools:context=".CollectionPoint">
 
     <TextView
-        android:id="@+id/RecoleccionText"
+        android:id="@+id/askHelpTitle"
         style="@style/activity_title"
         android:layout_width="299dp"
         android:layout_height="108dp"

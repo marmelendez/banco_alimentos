@@ -8,7 +8,7 @@
     tools:context=".SolicitarAyuda">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/MenuSolicitarAyuda"
+        android:id="@+id/askHelpMenuFragmentContainer"
         android:name="mx.iv.bancodealimentos_project.fragments.MenuFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/RecoleccionText"
+        android:id="@+id/askHelpTitle"
         style="@style/activity_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,33 +30,28 @@
         android:text="Solicitar Ayuda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MenuSolicitarAyuda"
+        app:layout_constraintTop_toBottomOf="@+id/askHelpMenuFragmentContainer"
         app:layout_constraintVertical_bias="0.544" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/Options"
+        android:id="@+id/askHelpFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_red_part"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/askHelpTitle"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--<androidx.fragment.app.FragmentContainerView
+        android:id="@+id/askHelpFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RecoleccionText" />
-
-    <!-- <ScrollView
-         android:id="@+id/scrollView2"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/RecoleccionText">
-
-         <LinearLayout
-             android:id="@+id/linearLayout"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:orientation="vertical"/>
-     </ScrollView> -->
-
+        app:layout_constraintTop_toBottomOf="@+id/askHelpTitle" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
