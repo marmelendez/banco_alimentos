@@ -54,17 +54,16 @@ class HelpOptionsFragment : Fragment() {
         }
 
         btnVolunteers.setOnClickListener {
-            Toast.makeText(it.context, "VOLUNTARIOS", Toast.LENGTH_SHORT).show()
+            Toast.makeText(it.context, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
         }
 
         btnPickup.setOnClickListener {
-            Toast.makeText(it.context, "RECOLECCION", Toast.LENGTH_SHORT).show()
             val intent = Intent(it.context, CollectionPointActivity::class.java)
             startActivity(intent)
         }
 
         btnAsk.setOnClickListener {
-            Toast.makeText(it.context, "SOLICITAR AYUDA", Toast.LENGTH_SHORT).show()
+            Toast.makeText(it.context, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
         }
 
         return view
