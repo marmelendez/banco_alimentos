@@ -17,7 +17,9 @@ class HomeActivity : AppCompatActivity(){
 
         // BOTON SOBRE EL BANCO
         binding.homeCvAbout.setOnClickListener {
-            Toast.makeText(this, "Pronto contaremos con este apartado",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Sobre Nosotros",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, activity_aboutus::class.java)
+            startActivity(intent)
         }
 
         // BOTON COMO AYUDAR
