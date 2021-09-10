@@ -1,6 +1,7 @@
 package mx.iv.bancodealimentos_project.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,8 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.widget.PopupMenu
+import mx.iv.bancodealimentos_project.DonationsActivity
+import mx.iv.bancodealimentos_project.HelpActivity
 import mx.iv.bancodealimentos_project.R
 import java.lang.RuntimeException
 
@@ -52,10 +55,16 @@ class MenuFragment : Fragment() {
             popupMenu.menuInflater.inflate(R.menu.menu_general, popupMenu.menu)
             popupMenu.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {
-                    R.id.menu_about -> Toast.makeText(it.context, "SOBRE EL BANCO", Toast.LENGTH_SHORT).show()
-                    R.id.menu_help -> Toast.makeText(it.context, "AYUDA", Toast.LENGTH_SHORT).show()
-                    R.id.menu_donations -> Toast.makeText(it.context, "DONACIONES", Toast.LENGTH_SHORT).show()
-                    R.id.menu_account -> Toast.makeText(it.context, "CUENTA", Toast.LENGTH_SHORT).show()
+                    R.id.menu_about -> Toast.makeText(it.context, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
+                    R.id.menu_help -> {
+                        val intent = Intent(it.context, HelpActivity::class.java)
+                        startActivity(intent)
+                    }
+                    R.id.menu_donations -> {
+                        val intent = Intent(it.context, DonationsActivity::class.java)
+                        startActivity(intent)
+                    }
+                    R.id.menu_account -> Toast.makeText(it.context, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
                 }
                 true
             }

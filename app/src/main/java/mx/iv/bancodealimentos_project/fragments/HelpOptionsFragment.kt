@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import mx.iv.bancodealimentos_project.CollectionPointActivity
 import mx.iv.bancodealimentos_project.DonationsActivity
 import mx.iv.bancodealimentos_project.R
 import mx.iv.bancodealimentos_project.activity_volunteer2
@@ -54,17 +55,19 @@ class HelpOptionsFragment : Fragment() {
         }
 
         btnVolunteers.setOnClickListener {
-            Toast.makeText(it.context, "VOLUNTARIOS", Toast.LENGTH_SHORT).show()
+
             val intent = Intent(it.context, activity_volunteer2::class.java)
             startActivity(intent)
+
         }
 
         btnPickup.setOnClickListener {
-            Toast.makeText(it.context, "RECOLECCION", Toast.LENGTH_SHORT).show()
+            val intent = Intent(it.context, CollectionPointActivity::class.java)
+            startActivity(intent)
         }
 
         btnAsk.setOnClickListener {
-            Toast.makeText(it.context, "SOLICITAR AYUDA", Toast.LENGTH_SHORT).show()
+            Toast.makeText(it.context, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
         }
 
         return view

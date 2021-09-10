@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange"
-    tools:context=".DonationsActivity">
+    tools:context=".CollectionPointActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/donationsMenuFragmentContainer"
+        android:id="@+id/collectionMenuFragmentContainer"
         android:name="mx.iv.bancodealimentos_project.fragments.MenuFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,8 +16,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/donationsTitle"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/donationsAmount"
@@ -30,76 +29,62 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donationsMenuFragmentContainer"
+        app:layout_constraintTop_toBottomOf="@+id/collectionMenuFragmentContainer"
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/donationsTitle"
+            android:id="@+id/collectionTitle"
             style="@style/activity_title"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/donations"
-            android:layout_marginVertical="16dp" />
+            android:layout_marginVertical="16dp"
+            android:text="@string/collectionPoints" />
+
+        <ImageView
+            android:id="@+id/collectionIvMap"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:contentDescription="@string/collectionPoints"
+            app:srcCompat="@drawable/maps" />
 
         <TextView
-            android:id="@+id/donationsTvAmount"
+            android:id="@+id/collectionTvList"
             style="@style/label"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:text="@string/amount" />
-
-        <EditText
-            android:id="@+id/donationsEtAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
             android:layout_gravity="center"
-            android:inputType="numberDecimal"
-            android:layout_marginTop="8dp"
-            android:autofillHints="emailAddress"
-            android:backgroundTint="@color/orange"
-            android:hint="@string/amount"
-            android:minHeight="48dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/gray"/>
+            android:layout_marginVertical="16dp"
+            android:text="@string/listProductos" />
 
         <Button
-            android:id="@+id/donationsBtnDonate"
+            android:id="@+id/collectionBtnAsk"
             style="@style/button"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/donation"
-            android:drawableEnd="@drawable/ic_paypal"
-            android:layout_marginTop="16dp" />
-
+            android:layout_marginVertical="16dp"
+            android:text="@string/askCollection" />
     </LinearLayout>
 
     <!--<TextView
-        android:id="@+id/donationsTitle"
+        android:id="@+id/collectionTitle"
         style="@style/activity_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/donations"
-        android:layout_marginVertical="16dp"
+        android:layout_marginVertical="8dp"
+        android:text="@string/collectionPoints"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donationsMenuFragmentContainer"/>
+        app:layout_constraintTop_toBottomOf="@+id/collectionMenuFragmentContainer" />
 
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/donationsFragmentContainer"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/Background"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_red_part"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donationsTitle"
-        app:layout_constraintVertical_bias="0.0" />-->
+        app:layout_constraintTop_toBottomOf="@+id/RecoleccionText"
+        app:srcCompat="@drawable/bg_red_part" />-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
