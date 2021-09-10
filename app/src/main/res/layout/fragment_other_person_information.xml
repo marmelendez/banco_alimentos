@@ -4,36 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fragments.ParaMiFragment">
+    tools:context=".fragments.OtherPersonInformation">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView3"
         android:layout_width="0dp"
         android:layout_height="988dp"
         android:layout_marginTop="76dp"
         android:src="@drawable/bg_red_part"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewNombre"
+        android:id="@+id/datos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="311dp"
+        android:layout_marginBottom="296dp"
+        android:text="DAtos de la otra persona"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/textViewNombre3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="38dp"
         android:text="Nombre:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/InputTelefono"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/inputTelefono2"
+        app:layout_constraintEnd_toStartOf="@+id/inputNombre2" />
 
     <EditText
-        android:id="@+id/InputNombre"
+        android:id="@+id/inputNombre2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
@@ -42,26 +55,26 @@
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textAllCaps="false"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewNombre"
-        app:layout_constraintStart_toEndOf="@+id/textViewNombre" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewNombre3"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textViewTelefono"
+        android:id="@+id/textViewTelefono3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="43dp"
         android:text="Teléfono:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/InputCorreo"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/inputCorreo2"
+        app:layout_constraintEnd_toStartOf="@+id/inputTelefono2" />
 
     <EditText
-        android:id="@+id/InputTelefono"
+        android:id="@+id/inputTelefono2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
@@ -70,26 +83,27 @@
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textAllCaps="false"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewTelefono"
-        app:layout_constraintStart_toEndOf="@+id/textViewTelefono" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewTelefono3"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textViewCorreo"
+        android:id="@+id/textViewCorreo3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="18dp"
         android:text="Correo:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toStartOf="@+id/InputCorreo" />
+        app:layout_constraintBottom_toTopOf="@+id/SolicitarHelp"
+        app:layout_constraintEnd_toStartOf="@+id/inputCorreo2" />
 
     <EditText
-        android:id="@+id/InputCorreo"
+        android:id="@+id/inputCorreo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="11dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
@@ -98,19 +112,19 @@
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textAllCaps="false"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewCorreo"
+        app:layout_constraintBottom_toTopOf="@+id/SolicitarHelp"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/SolicitarHelp"
+        style="@style/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="39dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#009639"
         android:text="Solicitar Ayuda"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/InputCorreo"
-        style="@style/button"/>
+        app:layout_constraintStart_toStartOf="@+id/textViewCorreo3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
