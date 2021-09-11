@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BancoDeAlimentos_Project">
         <activity
+            android:name=".SolicitarAyuda"
+            android:exported="true" />
+        <activity
+            android:name=".CollectionPoint"
 
             android:name=".BeVolunteerActivity"
             android:exported="true" />
