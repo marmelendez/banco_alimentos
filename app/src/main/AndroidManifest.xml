@@ -14,7 +14,22 @@
             android:exported="true" />
         <activity
             android:name=".CollectionPoint"
+
+            android:name=".BeVolunteerActivity"
             android:exported="true" />
+        <activity
+            android:name=".AboutUsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".VolunteerActivity"
+            android:exported="true" />
+        <activity
+              android:name=".PaymentDetailsActivity"
+              android:exported="true" />  
+        <activity
+              android:name=".CollectionPointActivity"
+              android:exported="true" />
+
         <activity
             android:name=".DonationsActivity"
             android:exported="true" />

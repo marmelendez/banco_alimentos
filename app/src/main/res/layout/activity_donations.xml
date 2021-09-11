@@ -7,6 +7,17 @@
     android:background="@color/orange"
     tools:context=".DonationsActivity">
 
+    <ImageView
+        android:id="@+id/volunteerIvLogo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/about"
+        android:background="@drawable/bg_red_part"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donationsMenuFragmentContainer"/>
+
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/donationsMenuFragmentContainer"
         android:name="mx.iv.bancodealimentos_project.fragments.MenuFragment"
@@ -23,13 +34,81 @@
         style="@style/activity_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:text="@string/donations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donationsMenuFragmentContainer"/>
+
+    <LinearLayout
+        android:id="@+id/donationsAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donationsMenuFragmentContainer">
+
+        <!--<TextView
+            android:id="@+id/donationsTitle"
+            style="@style/activity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="16dp"
+            android:text="@string/donations" />-->
+
+        <TextView
+            android:id="@+id/donationsTvAmount"
+            style="@style/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:text="@string/amount" />
+
+        <EditText
+            android:id="@+id/donationsEtAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:autofillHints="emailAddress"
+            android:backgroundTint="@color/orange"
+            android:ems="10"
+            android:hint="@string/amount"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray" />
+
+        <Button
+            android:id="@+id/donationsBtnDonate"
+            style="@style/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:drawableEnd="@drawable/ic_paypal"
+            android:text="@string/donation" />
+
+    </LinearLayout>
+
+    <!--<TextView
+        android:id="@+id/donationsTitle"
+        style="@style/activity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/donations"
         android:layout_marginVertical="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/donationsMenuFragmentContainer"/>
 
-    <!--<androidx.fragment.app.FragmentContainerView
+
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/donationsFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

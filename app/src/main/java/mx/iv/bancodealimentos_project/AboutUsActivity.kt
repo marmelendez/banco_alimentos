@@ -4,22 +4,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import mx.iv.bancodealimentos_project.fragments.MenuFragment
 
-class CollectionPoint : AppCompatActivity(), MenuFragment.CallbackMenu{
+class AboutUsActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_collection_point)
+        setContentView(R.layout.activity_aboutus)
 
         val menuFragment = MenuFragment()
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.CollectionMenu, menuFragment, TAG_FRAGMENT)
-        transaction.commit()
+        transaction.add(R.id.aboutUsCvMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
+
     }
 
-    override fun returnAct() {
+    override fun returnAct(){
         finish()
     }
 
-    companion object {
+    companion object{
         private const val TAG_FRAGMENT = "fragment"
     }
 }

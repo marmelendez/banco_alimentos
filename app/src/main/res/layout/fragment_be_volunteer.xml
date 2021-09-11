@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fragments.BeVolunteerFragment">
+
+    <!--<ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_red_part"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <TextView
+        android:id="@+id/fragBeVolunteerTvName"
+        style="@style/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="32dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/name"
+        app:layout_constraintEnd_toStartOf="@+id/fragBeVolunteerEtName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragBeVolunteerTvPhone"
+        style="@style/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="32dp"
+        android:text="@string/telephone"
+        app:layout_constraintStart_toStartOf="@+id/fragBeVolunteerTvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/fragBeVolunteerTvEmail" />
+
+    <TextView
+        android:id="@+id/fragBeVolunteerTvEmail"
+        style="@style/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="32dp"
+        android:text="@string/email"
+        app:layout_constraintStart_toStartOf="@+id/fragBeVolunteerTvName"
+        app:layout_constraintTop_toBottomOf="@+id/fragBeVolunteerTvName" />
+
+    <EditText
+        android:id="@+id/fragBeVolunteerEtPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/orange"
+        android:ems="10"
+        android:hint="@string/telephone"
+        android:autofillHints="@string/telephone"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="@+id/fragBeVolunteerTvPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fragBeVolunteerTvPhone" />
+
+    <EditText
+        android:id="@+id/fragBeVolunteerEtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/orange"
+        android:ems="10"
+        android:hint="@string/name"
+        android:autofillHints="@string/name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="@+id/fragBeVolunteerTvName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fragBeVolunteerTvName" />
+
+    <EditText
+        android:id="@+id/fragBeVolunteerEtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/orange"
+        android:ems="10"
+        android:hint="@string/email"
+        android:autofillHints="@string/email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="@+id/fragBeVolunteerTvEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fragBeVolunteerTvEmail" />
+
+    <Button
+        android:id="@+id/fragBeVolunteerBtnSend"
+        style="@style/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="24dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/sendData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragBeVolunteerEtPhone" />
+
+    <TextView
+        android:id="@+id/fragBeVolunteerTvReturnHome"
+        style="@style/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:text="@string/returnAct"
+        android:textColor="@color/orange"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragBeVolunteerBtnSend" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
