@@ -1,5 +1,6 @@
 package mx.iv.bancodealimentos_project.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -46,15 +47,32 @@ class LaAyudaEs : Fragment() {
 
         checkbox1.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-                Toast.makeText(view.context, "Me picado", Toast.LENGTH_SHORT).show()
                 listener?.replaceParaMiFragment()
+            }
+        })
+        checkbox2.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
+            override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+                listener?.replaceParaOtro()
+
             }
         })
         return view
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        listener = if (context is CallbackHelp) {
+            context
+        }else {
+            throw RuntimeException("Must implemente Callback in Activity")
+        }
+    }
+
     interface CallbackHelp {
         fun replaceParaMiFragment()
+        fun replaceParaOtro()
+        fun Other()
     }
 
     companion object {

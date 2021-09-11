@@ -6,34 +6,24 @@
     android:layout_height="match_parent"
     tools:context="fragments.ParaMiFragment">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="988dp"
-        android:layout_marginTop="76dp"
-        android:src="@drawable/bg_red_part"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textViewNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="96dp"
         android:text="Nombre:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/InputTelefono"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/InputNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginBottom="21dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
@@ -42,26 +32,26 @@
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textAllCaps="false"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewNombre"
+        app:layout_constraintBottom_toTopOf="@+id/textViewTelefono"
         app:layout_constraintStart_toEndOf="@+id/textViewNombre" />
 
     <TextView
         android:id="@+id/textViewTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:text="Teléfono:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/InputCorreo"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombre" />
 
     <EditText
         android:id="@+id/InputTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
+        android:layout_marginTop="17dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
@@ -70,26 +60,25 @@
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textAllCaps="false"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewTelefono"
-        app:layout_constraintStart_toEndOf="@+id/textViewTelefono" />
+        app:layout_constraintStart_toStartOf="@+id/InputNombre"
+        app:layout_constraintTop_toBottomOf="@+id/InputNombre" />
 
     <TextView
         android:id="@+id/textViewCorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="39dp"
         android:text="Correo:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toStartOf="@+id/InputCorreo" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/InputCorreo"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/InputCorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
+        android:layout_marginTop="11dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
@@ -98,19 +87,22 @@
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textAllCaps="false"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewCorreo"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/InputTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/InputTelefono" />
 
     <Button
         android:id="@+id/button"
+        style="@style/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="64dp"
         android:backgroundTint="#009639"
         android:text="Solicitar Ayuda"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/InputCorreo"
-        style="@style/button"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCorreo"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

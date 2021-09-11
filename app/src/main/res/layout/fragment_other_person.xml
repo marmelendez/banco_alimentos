@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".fragments.OtherPerson">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="988dp"
-        android:layout_marginTop="76dp"
-        android:src="@drawable/bg_red_part"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/Datos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Datos de la persona solicitando"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,19 +22,88 @@
         android:id="@+id/textViewNombre2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
+        android:layout_marginStart="28dp"
         android:text="Nombre:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/inputNombre"
-        app:layout_constraintStart_toStartOf="@+id/Datos" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTelefono2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Teléfono:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/inputTelefono"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/inputTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="2dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="Telefono"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/inputNombre"
+        app:layout_constraintTop_toBottomOf="@+id/inputNombre" />
+
+    <TextView
+        android:id="@+id/textViewCorreo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="48dp"
+        android:text="Correo:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputTelefono" />
+
+    <EditText
+        android:id="@+id/inputCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="Correo"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewCorreo2"
+        app:layout_constraintStart_toEndOf="@+id/textViewCorreo2" />
+
+    <Button
+        android:id="@+id/NextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="56dp"
+        android:background="#00FBFBFB"
+        android:text="Siguiente"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputCorreo" />
 
     <EditText
         android:id="@+id/inputNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="19dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
@@ -43,86 +114,5 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="@+id/Datos"
         app:layout_constraintTop_toBottomOf="@+id/Datos" />
-
-    <TextView
-        android:id="@+id/textViewTelefono2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="34dp"
-        android:text="Teléfono:"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputNombre" />
-
-    <EditText
-        android:id="@+id/inputTelefono"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner"
-        android:backgroundTint="#FFFFFF"
-        android:ems="10"
-        android:hint="Telefono"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewTelefono2"
-        app:layout_constraintStart_toStartOf="@+id/inputNombre" />
-
-    <TextView
-        android:id="@+id/textViewCorreo2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="24dp"
-        android:text="Correo:"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/inputCorreo"
-        app:layout_constraintTop_toBottomOf="@+id/inputTelefono" />
-
-    <EditText
-        android:id="@+id/inputCorreo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner"
-        android:backgroundTint="#FFFFFF"
-        android:ems="10"
-        android:hint="Correo"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewCorreo2"
-        app:layout_constraintStart_toStartOf="@+id/inputTelefono" />
-
-    <TextView
-        android:id="@+id/Datos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="311dp"
-        android:layout_marginBottom="312dp"
-        android:text="Datos de la persona solicitando"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
-
-    <Button
-        android:id="@+id/NextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="#00FBFBFB"
-        android:text="Siguiente"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
