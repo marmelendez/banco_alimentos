@@ -8,7 +8,7 @@ import android.widget.Toast
 import mx.iv.bancodealimentos_project.R
 import mx.iv.bancodealimentos_project.fragments.*
 
-class SolicitarAyuda : AppCompatActivity(), MenuFragment.CallbackMenu, LaAyudaEs.CallbackHelp{
+class SolicitarAyuda : AppCompatActivity(), MenuFragment.CallbackMenu, CheckboxFragment.CallbackHelp{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solicitar_ayuda)
@@ -18,7 +18,7 @@ class SolicitarAyuda : AppCompatActivity(), MenuFragment.CallbackMenu, LaAyudaEs
         transaction.add(R.id.MenuSolicitarAyuda, menuFragment, TAG_FRAGMENT)
         transaction.commit()
 
-        val ayudaEs = LaAyudaEs()
+        val ayudaEs = CheckboxFragment()
         val transact = supportFragmentManager.beginTransaction()
         transact.add(R.id.Options, ayudaEs, TAG_FRAGMENT)
         transact.commit()
@@ -28,17 +28,6 @@ class SolicitarAyuda : AppCompatActivity(), MenuFragment.CallbackMenu, LaAyudaEs
         finish()
     }
 
-    override fun replaceParaOtro() {
-        var currentFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT)
-        var transaction = supportFragmentManager.beginTransaction()
-        if(currentFragment != null) {
-            transaction.remove(currentFragment)
-        }
-
-        val paraOtro = OtherPerson()
-        transaction.add(R.id.Options, paraOtro, TAG_FRAGMENT)
-        transaction.commit()
-    }
 
     override fun replaceParaMiFragment() {
         var currentFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT)
@@ -46,7 +35,7 @@ class SolicitarAyuda : AppCompatActivity(), MenuFragment.CallbackMenu, LaAyudaEs
         if(currentFragment != null) {
             transaction.remove(currentFragment)
         }
-        val paraMi = ParaMiFragment()
+        val paraMi = OtherPersonInformation()
         transaction.add(R.id.Options, paraMi, TAG_FRAGMENT)
         transaction.commit()
     }
@@ -57,7 +46,7 @@ class SolicitarAyuda : AppCompatActivity(), MenuFragment.CallbackMenu, LaAyudaEs
         if(currentFragment != null) {
             transaction.remove(currentFragment)
         }
-        val OtherFrag = OtherPersonInformation()
+        val OtherFrag = OtherPerson()
         transaction.add(R.id.Options, OtherFrag, TAG_FRAGMENT)
         transaction.commit()
     }

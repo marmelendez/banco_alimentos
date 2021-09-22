@@ -1,10 +1,12 @@
 package mx.iv.bancodealimentos_project.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import mx.iv.bancodealimentos_project.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -21,6 +23,7 @@ class OtherPersonInformation : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var listener: CheckboxFragment.CallbackHelp? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +38,23 @@ class OtherPersonInformation : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_other_person_information, container, false)
+        val view = inflater.inflate(R.layout.fragment_other_person_information, container, false)
+        val next = view.findViewById<Button>(R.id.SolicitarHelp)
+
+        next.setOnClickListener {
+            listener?.Other()
+        }
+        return view
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        listener = if (context is CheckboxFragment.CallbackHelp) {
+            context
+        }else {
+            throw RuntimeException("Must implemente Callback in Activity")
+        }
     }
 
     companion object {

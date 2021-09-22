@@ -22,7 +22,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [LaAyudaEs.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LaAyudaEs : Fragment() {
+class CheckboxFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -42,8 +42,8 @@ class LaAyudaEs : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_la_ayuda_es, container, false)
-        val checkbox1 = view.findViewById<CheckBox>(R.id.meCheckBox)
-        val checkbox2 = view.findViewById<CheckBox>(R.id.elseCheckBox)
+        val checkbox1 = view.findViewById<CheckBox>(R.id.paraOtraPersonaCheckBox)
+        val checkbox2 = view.findViewById<CheckBox>(R.id.paraMi)
 
         checkbox1.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
@@ -52,8 +52,7 @@ class LaAyudaEs : Fragment() {
         })
         checkbox2.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-                listener?.replaceParaOtro()
-
+                listener?.Other()
             }
         })
         return view
@@ -71,7 +70,7 @@ class LaAyudaEs : Fragment() {
 
     interface CallbackHelp {
         fun replaceParaMiFragment()
-        fun replaceParaOtro()
+        //fun replaceParaOtro()
         fun Other()
     }
 
@@ -87,7 +86,7 @@ class LaAyudaEs : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            LaAyudaEs().apply {
+            CheckboxFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

@@ -23,7 +23,6 @@ class OtherPerson : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var listener: LaAyudaEs.CallbackHelp? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,23 +37,7 @@ class OtherPerson : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_other_person, container, false)
-        val next = view.findViewById<Button>(R.id.NextButton)
-
-        next.setOnClickListener {
-            listener?.Other()
-        }
-        return view
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-        listener = if (context is LaAyudaEs.CallbackHelp) {
-            context
-        }else {
-            throw RuntimeException("Must implemente Callback in Activity")
-        }
+        return inflater.inflate(R.layout.fragment_other_person, container, false)
     }
 
     companion object {

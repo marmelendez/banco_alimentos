@@ -13,7 +13,6 @@ import mx.iv.bancodealimentos_project.fragments.LogInFragment
 import mx.iv.bancodealimentos_project.fragments.SignInFragment
 import mx.iv.bancodealimentos_project.databinding.ActivityRegisterBinding
 import mx.iv.bancodealimentos_project.fragments.MenuFragment
-import com.google.firebase.auth.FirebaseAuth
 
 
 
@@ -26,7 +25,7 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        mAuth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
