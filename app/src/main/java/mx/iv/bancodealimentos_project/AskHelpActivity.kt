@@ -2,25 +2,21 @@ package mx.iv.bancodealimentos_project
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.CheckBox
-import android.widget.Toast
-import mx.iv.bancodealimentos_project.R
 import mx.iv.bancodealimentos_project.fragments.*
 
-class SolicitarAyuda : AppCompatActivity(), MenuFragment.CallbackMenu, CheckboxFragment.CallbackHelp{
+class AskHelpActivity : AppCompatActivity(), MenuFragment.CallbackMenu, CheckboxFragment.CallbackHelp{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_solicitar_ayuda)
+        setContentView(R.layout.activity_ask_help)
 
         val menuFragment = MenuFragment()
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.MenuSolicitarAyuda, menuFragment, TAG_FRAGMENT)
+        transaction.add(R.id.askHelpMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
         transaction.commit()
 
-        val ayudaEs = CheckboxFragment()
+        val checkbox = CheckboxFragment()
         val transact = supportFragmentManager.beginTransaction()
-        transact.add(R.id.Options, ayudaEs, TAG_FRAGMENT)
+        transact.add(R.id.askHelpFragmentContainer, checkbox, TAG_FRAGMENT)
         transact.commit()
     }
 
@@ -29,25 +25,25 @@ class SolicitarAyuda : AppCompatActivity(), MenuFragment.CallbackMenu, CheckboxF
     }
 
 
-    override fun replaceParaMiFragment() {
+    override fun replaceExternalHelpFragment() {
         var currentFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT)
         var transaction = supportFragmentManager.beginTransaction()
         if(currentFragment != null) {
             transaction.remove(currentFragment)
         }
-        val paraMi = OtherPersonInformation()
-        transaction.add(R.id.Options, paraMi, TAG_FRAGMENT)
+        val paraMi = ExternalHelpFragment()
+        transaction.add(R.id.askHelpFragmentContainer, paraMi, TAG_FRAGMENT)
         transaction.commit()
     }
 
-    override fun Other() {
+    override fun replacePersonalHelpFragment() {
         var currentFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT)
         var transaction = supportFragmentManager.beginTransaction()
         if(currentFragment != null) {
             transaction.remove(currentFragment)
         }
-        val OtherFrag = OtherPerson()
-        transaction.add(R.id.Options, OtherFrag, TAG_FRAGMENT)
+        val OtherFrag = PersonalHelpFragment()
+        transaction.add(R.id.askHelpFragmentContainer, OtherFrag, TAG_FRAGMENT)
         transaction.commit()
     }
     companion object {

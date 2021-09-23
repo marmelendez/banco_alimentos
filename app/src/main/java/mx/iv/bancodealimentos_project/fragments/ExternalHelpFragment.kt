@@ -16,13 +16,14 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [OtherPerson.newInstance] factory method to
+ * Use the [OtherPersonInformation.newInstance] factory method to
  * create an instance of this fragment.
  */
-class OtherPerson : Fragment() {
+class ExternalHelpFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var listener: CheckboxFragment.CallbackHelp? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +38,23 @@ class OtherPerson : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_other_person, container, false)
+        val view = inflater.inflate(R.layout.fragment_external_help, container, false)
+        val next = view.findViewById<Button>(R.id.extHelpBtnNext)
+
+        next.setOnClickListener {
+            listener?.replacePersonalHelpFragment()
+        }
+        return view
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        listener = if (context is CheckboxFragment.CallbackHelp) {
+            context
+        }else {
+            throw RuntimeException("Must implement Callback in Activity")
+        }
     }
 
     companion object {
@@ -47,12 +64,12 @@ class OtherPerson : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment OtherPerson.
+         * @return A new instance of fragment OtherPersonInformation.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            OtherPerson().apply {
+            ExternalHelpFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

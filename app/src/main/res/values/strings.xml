@@ -26,6 +26,11 @@
     <string name="askCollection">Solicitar recoleccion</string>
     <string name="listProductos">Productos que puedes donar: </string>
     <string name="sendData">Enviar datos</string>
+    <string name="externalHelp">Para otra persona</string>
+    <string name="personalHelp">Para mi</string>
+    <string name="personalData">Datos de la persona solicitando</string>
+    <string name="externalData">Datos de la persona que requiere nuestra ayuda</string>
+    <string name="next">Siguiente</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

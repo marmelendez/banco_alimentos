@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import mx.iv.bancodealimentos_project.R
 import android.widget.CompoundButton
-import android.widget.Toast
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -41,18 +40,18 @@ class CheckboxFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_la_ayuda_es, container, false)
-        val checkbox1 = view.findViewById<CheckBox>(R.id.paraOtraPersonaCheckBox)
-        val checkbox2 = view.findViewById<CheckBox>(R.id.paraMi)
+        val view = inflater.inflate(R.layout.fragment_checkbox, container, false)
+        val checkboxExtHelp = view.findViewById<CheckBox>(R.id.checkboxCbExternalHelp)
+        val checkboxPerHelp = view.findViewById<CheckBox>(R.id.checkboxCbPersonalHelp)
 
-        checkbox1.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
+        checkboxExtHelp.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-                listener?.replaceParaMiFragment()
+                listener?.replaceExternalHelpFragment()
             }
         })
-        checkbox2.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
+        checkboxPerHelp.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-                listener?.Other()
+                listener?.replacePersonalHelpFragment()
             }
         })
         return view
@@ -69,9 +68,8 @@ class CheckboxFragment : Fragment() {
     }
 
     interface CallbackHelp {
-        fun replaceParaMiFragment()
-        //fun replaceParaOtro()
-        fun Other()
+        fun replaceExternalHelpFragment()
+        fun replacePersonalHelpFragment()
     }
 
     companion object {

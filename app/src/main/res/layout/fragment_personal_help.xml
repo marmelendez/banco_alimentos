@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.PersonalHelpFragment">
+
+    <TextView
+        android:id="@+id/perHelpTv"
+        style="@style/activity_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/personalData"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/perHelpTvName"
+        style="@style/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/perHelpEtName"
+        app:layout_constraintStart_toStartOf="@+id/perHelpTv"
+        app:layout_constraintTop_toTopOf="@+id/perHelpEtName" />
+
+    <TextView
+        android:id="@+id/perHelpTvPhone"
+        style="@style/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/telephone"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/perHelpEtPhone"
+        app:layout_constraintStart_toStartOf="@+id/perHelpTvName"
+        app:layout_constraintTop_toTopOf="@+id/perHelpEtPhone" />
+
+    <TextView
+        android:id="@+id/perHelpTvEmail"
+        style="@style/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/perHelpEtEmail"
+        app:layout_constraintStart_toStartOf="@+id/perHelpTvPhone"
+        app:layout_constraintTop_toTopOf="@+id/perHelpEtEmail" />
+
+    <EditText
+        android:id="@+id/perHelpEtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp"
+        android:ems="10"
+        android:hint="@string/name"
+        android:autofillHints="name"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/white"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/perHelpTv"
+        app:layout_constraintTop_toBottomOf="@+id/perHelpTv" />
+
+    <EditText
+        android:id="@+id/perHelpEtPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp"
+        android:ems="10"
+        android:hint="@string/telephone"
+        android:autofillHints="phone"
+        android:inputType="phone"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/white"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/perHelpEtName"
+        app:layout_constraintTop_toBottomOf="@+id/perHelpEtName" />
+
+    <EditText
+        android:id="@+id/perHelpEtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:autofillHints="emailAddress"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/white"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/perHelpEtPhone"
+        app:layout_constraintTop_toBottomOf="@+id/perHelpEtPhone" />
+
+    <Button
+        android:id="@+id/perHelpBtnAskHelp"
+        style="@style/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/askForHelp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/perHelpEtEmail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

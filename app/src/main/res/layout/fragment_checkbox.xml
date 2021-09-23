@@ -6,39 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".fragments.CheckboxFragment">
 
-    <CheckBox
-        android:id="@+id/paraOtraPersonaCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/white"
-        android:text="Para otra persona"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/textAyuda"
-        app:layout_constraintTop_toBottomOf="@+id/textAyuda" />
-
     <TextView
-        android:id="@+id/textAyuda"
+        android:id="@+id/checkboxTvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
-        android:text="La ayuda es.."
+        android:text="@string/askForHelp"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/paraMi"
+        android:id="@+id/checkboxCbExternalHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/externalHelp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/checkboxTvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/checkboxTvTitle" />
+
+    <CheckBox
+        android:id="@+id/checkboxCbPersonalHelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/white"
-        android:text="Para mí"
+        android:text="@string/personalHelp"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/paraOtraPersonaCheckBox"
-        app:layout_constraintTop_toBottomOf="@+id/paraOtraPersonaCheckBox" />
+        app:layout_constraintStart_toStartOf="@+id/checkboxCbExternalHelp"
+        app:layout_constraintTop_toBottomOf="@+id/checkboxCbExternalHelp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

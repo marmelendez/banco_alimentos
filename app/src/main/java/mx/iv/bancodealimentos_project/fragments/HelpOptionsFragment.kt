@@ -6,14 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import mx.iv.bancodealimentos_project.CollectionPointActivity
 import mx.iv.bancodealimentos_project.DonationsActivity
 import mx.iv.bancodealimentos_project.R
 
-import mx.iv.bancodealimentos_project.SolicitarAyuda
+import mx.iv.bancodealimentos_project.AskHelpActivity
 import mx.iv.bancodealimentos_project.VolunteerActivity
 
 // TODO: Rename parameter arguments, choose names that match
@@ -68,7 +66,7 @@ class HelpOptionsFragment : Fragment() {
         }
 
         btnAsk.setOnClickListener {
-            val intent = Intent(it.context, SolicitarAyuda::class.java)
+            val intent = Intent(it.context, AskHelpActivity::class.java)
             startActivity(intent)
         }
 
