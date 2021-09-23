@@ -14,15 +14,11 @@ import mx.iv.bancodealimentos_project.R
 import mx.iv.bancodealimentos_project.AskHelpActivity
 import mx.iv.bancodealimentos_project.VolunteerActivity
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 /**
- * A simple [Fragment] subclass.
- * Use the [HelpOptionsFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * Fragmento que muestra el menu de opciones de como ayudar
  */
 class HelpOptionsFragment : Fragment() {
     // TODO: Rename and change types of parameters
@@ -41,7 +37,6 @@ class HelpOptionsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
 
         val view = inflater.inflate(R.layout.fragment_help_options, container, false)
 
@@ -50,6 +45,7 @@ class HelpOptionsFragment : Fragment() {
         val btnPickup = view.findViewById<CardView>(R.id.helpCvPickup)
         val btnAsk = view.findViewById<CardView>(R.id.helpCvAskHelp)
 
+        // Agrega listener a cada boton para redirigir a la pagina solicitada
         btnDonations.setOnClickListener {
             val intent = Intent(it.context, DonationsActivity::class.java)
             startActivity(intent)
@@ -74,15 +70,6 @@ class HelpOptionsFragment : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HelpOptionsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             HelpOptionsFragment().apply {

@@ -14,6 +14,9 @@ import java.lang.RuntimeException
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
+/**
+ * Fragmento que muestra el formulario para iniciar sesion
+ */
 class LogInFragment : Fragment() {
 
     private var param1: String? = null

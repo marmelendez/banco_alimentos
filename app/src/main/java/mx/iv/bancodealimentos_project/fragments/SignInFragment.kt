@@ -16,6 +16,9 @@ import java.lang.RuntimeException
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
+/**
+ * Fragmento con el formulario para registrarse
+ */
 class SignInFragment : Fragment() {
 
     private var param1: String? = null

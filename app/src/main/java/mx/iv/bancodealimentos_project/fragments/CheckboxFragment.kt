@@ -8,19 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import mx.iv.bancodealimentos_project.R
-import android.widget.CompoundButton
 
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 /**
- * A simple [Fragment] subclass.
- * Use the [LaAyudaEs.newInstance] factory method to
- * create an instance of this fragment.
- */
+ * Fragmento con dos checkbox: solicitar ayuda para mi o para otra persona
+ **/
 class CheckboxFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -35,25 +29,24 @@ class CheckboxFragment : Fragment() {
         }
     }
 
+    // Se infla la vista y agrega listener a cada checkbox
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val view = inflater.inflate(R.layout.fragment_checkbox, container, false)
         val checkboxExtHelp = view.findViewById<CheckBox>(R.id.checkboxCbExternalHelp)
         val checkboxPerHelp = view.findViewById<CheckBox>(R.id.checkboxCbPersonalHelp)
 
-        checkboxExtHelp.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
-            override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-                listener?.replaceExternalHelpFragment()
-            }
-        })
-        checkboxPerHelp.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
-            override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-                listener?.replacePersonalHelpFragment()
-            }
-        })
+        // Si se selecciona el checkbox de ayuda para otra persona
+        // se muestra el fragmento de external help
+        checkboxExtHelp.setOnCheckedChangeListener { _, _ -> listener?.replaceExternalHelpFragment() }
+
+        // Si se selecciona el checkbox de ayuda para mi
+        // se muestra el fragmento de personal help
+        checkboxPerHelp.setOnCheckedChangeListener { _, _ -> listener?.replacePersonalHelpFragment() }
+
         return view
     }
 
@@ -73,15 +66,6 @@ class CheckboxFragment : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LaAyudaEs.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             CheckboxFragment().apply {
