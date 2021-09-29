@@ -9,12 +9,12 @@
     tools:context=".AboutUsActivity">
 
     <ImageView
-        android:id="@+id/volunteerIvLogo"
+        android:id="@+id/aboutusBG"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="175dp"
         android:contentDescription="@string/about"
-        android:background="@drawable/voluntarios"
+        android:background="@drawable/bg_red_part"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -49,58 +49,87 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginVertical="8dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aboutUsTitle">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/aboutUsCv1"
+            android:id="@+id/aboutUsCDinfo"
             android:layout_width="fill_parent"
-            android:layout_height="150dp"
-            android:layout_marginEnd="8dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginTop="8dp"
             card_view:cardCornerRadius="20dp"
-            card_view:cardElevation="8dp" />
+            card_view:cardElevation="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/aboutUsIvAboutUs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_aboutus"
+                    android:contentDescription="@string/about"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/aboutUsTvQuestion"
+                    style="@style/card_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aboutus"
+                    android:textColor="@color/green"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/aboutUsIvAboutUs" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/aboutUsCv2"
+            android:id="@+id/aboutUsCDdata"
             android:layout_width="fill_parent"
-            android:layout_height="150dp"
-            android:layout_marginStart="8dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             card_view:cardCornerRadius="20dp"
-            card_view:cardElevation="8dp" />
-    </LinearLayout>
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            card_view:cardElevation="8dp">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginVertical="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutUsLLTop">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="16dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/aboutUsCv3"
-            android:layout_width="fill_parent"
-            android:layout_height="150dp"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            card_view:cardCornerRadius="20dp"
-            card_view:cardElevation="8dp" />
+                <ImageView
+                    android:id="@+id/aboutUsIvData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_data"
+                    android:contentDescription="@string/about"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/aboutUsCv4"
-            android:layout_width="fill_parent"
-            android:layout_height="150dp"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            card_view:cardCornerRadius="20dp"
-            card_view:cardElevation="8dp" />
+                <TextView
+                    android:id="@+id/aboutUsTvData"
+                    style="@style/card_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/data"
+                    android:textColor="@color/green"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/aboutUsIvData" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

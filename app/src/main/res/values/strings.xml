@@ -14,7 +14,7 @@
     <string name="help">¿Cómo ayudar?</string>
     <string name="donations">Donaciones</string>
     <string name="account">Mi cuenta</string>
-    <string name="askForHelp">Solicitar ayuda</string>
+    <string name="askForHelp">Ser beneficiario</string>
     <string name="pickupPoints">Centros de acopio </string>
     <string name="volunteers">Voluntarios</string>
     <string name="offerVolunteers">Ofrecerse como voluntario</string>
@@ -31,6 +31,8 @@
     <string name="personalData">Datos de la persona solicitando</string>
     <string name="externalData">Datos de la persona que requiere nuestra ayuda</string>
     <string name="next">Siguiente</string>
+    <string name="aboutus">¿Quienes somos?</string>
+    <string name="data">Datos informativos</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -54,7 +54,6 @@ class MenuFragment : Fragment() {
                         startActivity(intent)
                     }
                     R.id.menu_about -> {
-                        Toast.makeText(it.context, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
                         val intent = Intent(it.context, AboutUsActivity::class.java)
                         startActivity(intent)
                     }
