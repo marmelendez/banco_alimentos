@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BancoDeAlimentos_Project">
         <activity
+            android:name=".AboutUsInfoActivity"
+            android:exported="true" />
+        <activity
             android:name=".AskHelpActivity"
             android:exported="true" />
         <activity
@@ -25,12 +28,11 @@
             android:name=".VolunteerActivity"
             android:exported="true" />
         <activity
-              android:name=".PaymentDetailsActivity"
-              android:exported="true" />  
+            android:name=".PaymentDetailsActivity"
+            android:exported="true" />
         <activity
-              android:name=".CollectionPointActivity"
-              android:exported="true" />
-
+            android:name=".CollectionPointActivity"
+            android:exported="true" />
         <activity
             android:name=".DonationsActivity"
             android:exported="true" />
