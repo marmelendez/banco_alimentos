@@ -65,7 +65,10 @@ class MenuFragment : Fragment() {
                         val intent = Intent(it.context, DonationsActivity::class.java)
                         startActivity(intent)
                     }
-                    R.id.menu_account -> Toast.makeText(it.context, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
+                    R.id.menu_account -> {
+                        val intent = Intent(it.context, RegisterActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
                 true
             }

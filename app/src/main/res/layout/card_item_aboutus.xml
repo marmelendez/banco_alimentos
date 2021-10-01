@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
     android:orientation="vertical">
@@ -14,6 +14,7 @@
         app:cardCornerRadius="22dp">
         
         <LinearLayout
+            android:id="@+id/cardItemLLBg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -21,12 +22,13 @@
             android:background="@drawable/info1">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/cardItemImg"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                app:srcCompat="@drawable/ic_aboutus" />
+                app:srcCompat="@drawable/ic_info_white" />
 
             <TextView
+                android:id="@+id/cardItemTvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="32dp"
@@ -37,6 +39,7 @@
                 android:textAlignment="center"/>
 
             <TextView
+                android:id="@+id/cardItemTvDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="32dp"

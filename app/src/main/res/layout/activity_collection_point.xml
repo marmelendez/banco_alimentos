@@ -7,6 +7,19 @@
     android:background="@color/orange"
     tools:context=".CollectionPointActivity">
 
+    <ImageView
+        android:id="@+id/collectionIvLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_red_part"
+        android:contentDescription="@string/volunteers"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/collectionTitle"
+        app:layout_constraintVertical_bias="0.0" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/collectionMenuFragmentContainer"
         android:name="mx.iv.bancodealimentos_project.fragments.MenuFragment"
@@ -18,54 +31,93 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/donationsAmount"
+    <TextView
+        android:id="@+id/collectionTitle"
+        style="@style/activity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/collectionPoints"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/collectionMenuFragmentContainer" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_red_part"
-        android:orientation="vertical"
-        android:gravity="top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/collectionMenuFragmentContainer"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/collectionTitle">
 
-        <TextView
-            android:id="@+id/collectionTitle"
-            style="@style/activity_title"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="16dp"
-            android:text="@string/collectionPoints" />
+            android:layout_marginHorizontal="32dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/collectionIvMap"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:contentDescription="@string/collectionPoints"
-            app:srcCompat="@drawable/maps" />
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/collectionMap"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                tools:context=".MapsActivity" />
 
-        <TextView
-            android:id="@+id/collectionTvList"
-            style="@style/label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginVertical="16dp"
-            android:text="@string/listProductos" />
+            <TextView
+                android:id="@+id/collectionTvDirection"
+                style="@style/label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:drawableStart="@drawable/ic_bank_location"
+                android:text="@string/bankDirection"
+                android:textAlignment="textStart"
+                android:textSize="14sp" />
 
-        <!--<Button
-            android:id="@+id/collectionBtnAsk"
-            style="@style/button"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="16dp"
-            android:text="@string/askCollection" />-->
-    </LinearLayout>
+            <!--<TextView
+                android:id="@+id/collectionTvPhone"
+                style="@style/label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:drawableStart="@drawable/ic_bank_phone"
+                android:text="@string/bankPhone"
+                android:textAlignment="textStart"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/collectionTvEmail"
+                style="@style/label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:drawableStart="@drawable/ic_bank_email"
+                android:text="@string/bankEmail"
+                android:textAlignment="textStart"
+                android:textSize="14sp" />-->
+
+            <TextView
+                android:id="@+id/collectionTvList"
+                style="@style/card_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/listProductos" />
+
+            <TextView
+                android:id="@+id/collectionTvListProducts"
+                style="@style/label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:text="@string/paragraph" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

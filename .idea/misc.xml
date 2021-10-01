@@ -28,13 +28,18 @@
         <entry key="..\:/Users/ivann/OneDrive/Documentos/banco_alimentos/app/src/main/res/layout/fragment_sign_in.xml" value="0.365625" />
         <entry key="app/src/main/res/drawable/background.xml" value="0.2651282051282051" />
         <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.2651282051282051" />
+        <entry key="app/src/main/res/drawable/bg_round_corner.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/drawable/button_general.xml" value="0.2651282051282051" />
         <entry key="app/src/main/res/drawable/ic_about.xml" value="0.14583333333333334" />
         <entry key="app/src/main/res/drawable/ic_aboutus.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/drawable/ic_account.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/drawable/ic_bank_email.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/drawable/ic_bank_location.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/drawable/ic_bank_phone.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/drawable/ic_data.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/drawable/ic_food_bank.xml" value="0.2651282051282051" />
         <entry key="app/src/main/res/drawable/ic_help.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/drawable/ic_info_white.xml" value="0.14583333333333334" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2651282051282051" />
         <entry key="app/src/main/res/drawable/ic_location.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/drawable/ic_menu.xml" value="0.2651282051282051" />
@@ -57,6 +62,7 @@
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_inicio.xml" value="0.2328125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.27247191011235955" />
+        <entry key="app/src/main/res/layout/activity_map_view.xml" value="0.2390625" />
         <entry key="app/src/main/res/layout/activity_payment_details.xml" value="0.2390625" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_solicitar_ayuda.xml" value="0.253125" />
@@ -70,6 +76,7 @@
         <entry key="app/src/main/res/layout/fragment_help_options.xml" value="0.2390625" />
         <entry key="app/src/main/res/layout/fragment_iniciar_sesion.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_la_ayuda_es.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/fragment_map.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/fragment_other_person.xml" value="0.3697916666666667" />
         <entry key="app/src/main/res/layout/fragment_other_person_information.xml" value="0.3697916666666667" />

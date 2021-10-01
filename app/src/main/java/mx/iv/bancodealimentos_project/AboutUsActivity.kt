@@ -3,6 +3,7 @@ package mx.iv.bancodealimentos_project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import mx.iv.bancodealimentos_project.databinding.ActivityAboutusBinding
 import mx.iv.bancodealimentos_project.databinding.ActivityHomeBinding
 import mx.iv.bancodealimentos_project.fragments.MenuFragment
@@ -21,12 +22,13 @@ class AboutUsActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
         transaction.add(R.id.aboutUsCvMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
 
         binding.aboutUsCDinfo.setOnClickListener {
-            val intent = Intent(it.context, AboutUsInfoActivity::class.java)
-            startActivity(intent)
+            Toast.makeText(this, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
+            /*val intent = Intent(it.context, AboutUsInfoActivity::class.java)
+            startActivity(intent)*/
         }
 
         binding.aboutUsCDdata.setOnClickListener {
-
+            Toast.makeText(this, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
         }
     }
 
