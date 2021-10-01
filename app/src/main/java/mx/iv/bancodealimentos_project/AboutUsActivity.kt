@@ -28,8 +28,6 @@ class AboutUsActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
         binding.aboutUsCDdata.setOnClickListener {
 
         }
-
-
     }
 
     override fun returnAct(){

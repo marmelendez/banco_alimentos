@@ -32,6 +32,8 @@
     <string name="externalData">Datos de la persona que requiere nuestra ayuda</string>
     <string name="next">Siguiente</string>
     <string name="aboutus">¿Quienes somos?</string>
+    <string name="mision">Mision</string>
+    <string name="vision">Vision</string>
     <string name="data">Datos informativos</string>
     <string name="volunteerQuestion">¿Qué puedes hacer como voluntario?</string>
     <string name="formResponseTitle">¡Gracias por tu interés!</string>
