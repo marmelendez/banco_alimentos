@@ -17,7 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/volunterSv"
         app:layout_constraintVertical_bias="1"/>
 
     <androidx.fragment.app.FragmentContainerView
@@ -42,53 +42,73 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <ScrollView
+        android:id="@+id/volunterSv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="486dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/volunteerTitle">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/volunteerCvAbout1"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="8dp"
-            card_view:cardCornerRadius="20dp"
-            card_view:cardElevation="8dp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/volunteerCvAbout2"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="8dp"
-            card_view:cardCornerRadius="20dp"
-            card_view:cardElevation="8dp" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/volunteerCvAbout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginVertical="8dp"
+                card_view:cardCornerRadius="20dp"
+                card_view:cardElevation="8dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/volunteerCvAbout3"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="8dp"
-            card_view:cardCornerRadius="20dp"
-            card_view:cardElevation="8dp" />
-    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/volunteerBtnVolunteer"
-        style="@style/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="16dp"
-        android:backgroundTint="@color/green"
-        android:text="@string/offerVolunteers"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/img1"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/volunteers"/>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="16dp"
+                        style="@style/card_title"
+                        android:textColor="@color/green"
+                        android:text="@string/volunteerQuestion"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_margin="16dp"
+                        android:text="@string/paragraph"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/volunteerBtnVolunteer"
+                style="@style/button"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/offerVolunteers" />
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

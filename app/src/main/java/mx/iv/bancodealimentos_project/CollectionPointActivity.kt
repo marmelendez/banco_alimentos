@@ -21,9 +21,9 @@ class CollectionPointActivity : AppCompatActivity(), MenuFragment.CallbackMenu{
         transaction.add(R.id.collectionMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
         transaction.commit()
 
-        binding.collectionBtnAsk.setOnClickListener {
+        /*binding.collectionBtnAsk.setOnClickListener {
             Toast.makeText(this, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
-        }
+        }*/
     }
 
     override fun returnAct() {
