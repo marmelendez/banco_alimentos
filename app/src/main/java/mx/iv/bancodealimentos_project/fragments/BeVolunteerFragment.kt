@@ -1,5 +1,6 @@
 package mx.iv.bancodealimentos_project.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +12,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
+import mx.iv.bancodealimentos_project.AskHelpActivity
 import mx.iv.bancodealimentos_project.HelpActivity
 import mx.iv.bancodealimentos_project.R
 
@@ -24,6 +26,7 @@ private const val ARG_PARAM2 = "param2"
 class BeVolunteerFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
+    private var listener: CallbackVolunteer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,24 +47,17 @@ class BeVolunteerFragment : Fragment() {
         val inputName = view.findViewById<EditText>(R.id.fragBeVolunteerEtName)
         val inputEmail = view.findViewById<EditText>(R.id.fragBeVolunteerEtEmail)
         val inputTelephone = view.findViewById<EditText>(R.id.fragBeVolunteerEtPhone)
-
         val btnSendData = view.findViewById<Button>(R.id.fragBeVolunteerBtnSend)
-        val btnReturnHome = view.findViewById<TextView>(R.id.fragBeVolunteerTvReturnHome)
 
         // Click listener para boton de mandar informacion
         btnSendData.setOnClickListener {
-            if (validate(inputName) && validate(inputEmail) && validate(inputTelephone)) {
-
+            listener?.replaceFormResponseFragment()
+           /* if (validate(inputName) && validate(inputEmail) && validate(inputTelephone)) {
+                listener?.replaceFormResponseFragment()
                 Toast.makeText(it.context, "¡Gracias por tu interés! Pronto nos pondremos en contacto contigo", Toast.LENGTH_SHORT).show()
-                btnReturnHome.isVisible = true
-            }
+            }*/
         }
 
-        // Click listener para boton de regresa a pagina de ayuda
-        btnReturnHome.setOnClickListener {
-            val intent = Intent(it.context, HelpActivity::class.java)
-            startActivity(intent)
-        }
         return view
     }
 
@@ -71,6 +67,20 @@ class BeVolunteerFragment : Fragment() {
             return false
         }
         return true
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        listener = if (context is CallbackVolunteer) {
+            context
+        }else {
+            throw RuntimeException("Must implement Callback in Activity")
+        }
+    }
+
+    interface CallbackVolunteer {
+        fun replaceFormResponseFragment()
     }
 
     companion object {

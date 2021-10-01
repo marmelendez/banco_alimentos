@@ -62,6 +62,9 @@
         <entry key="app/src/main/res/layout/activity_volunteer2.xml" value="0.14635416666666667" />
         <entry key="app/src/main/res/layout/card_item_aboutus.xml" value="0.1296875" />
         <entry key="app/src/main/res/layout/fragment_be_volunteer.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/fragment_checkbox.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/fragment_external_help.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/fragment_form_response.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_help_options.xml" value="0.2390625" />
         <entry key="app/src/main/res/layout/fragment_iniciar_sesion.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_la_ayuda_es.xml" value="0.253125" />

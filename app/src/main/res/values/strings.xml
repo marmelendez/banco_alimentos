@@ -34,6 +34,8 @@
     <string name="aboutus">¿Quienes somos?</string>
     <string name="data">Datos informativos</string>
     <string name="volunteerQuestion">¿Qué puedes hacer como voluntario?</string>
+    <string name="formResponseTitle">¡Gracias por tu interés!</string>
+    <string name="formResponseDescription">Pronto nos contactaremos contigo</string>
     <string name="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam mauris, aliquet eget libero nec, laoreet fringilla arcu. </string>
 
     <!-- TODO: Remove or change this placeholder text -->

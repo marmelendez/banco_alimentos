@@ -42,8 +42,8 @@ class AskHelpActivity : AppCompatActivity(), MenuFragment.CallbackMenu, Checkbox
         if(currentFragment != null) {
             transaction.remove(currentFragment)
         }
-        val OtherFrag = PersonalHelpFragment()
-        transaction.add(R.id.askHelpFragmentContainer, OtherFrag, TAG_FRAGMENT)
+        val otherFrag = PersonalHelpFragment()
+        transaction.add(R.id.askHelpFragmentContainer, otherFrag, TAG_FRAGMENT)
         transaction.commit()
     }
     companion object {
