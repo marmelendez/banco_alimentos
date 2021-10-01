@@ -74,8 +74,8 @@
                     <ImageView
                         android:id="@+id/img"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/img1"
+                        android:layout_height="200dp"
+                        android:src="@drawable/img"
                         android:scaleType="centerCrop"
                         android:contentDescription="@string/volunteers"/>
 
