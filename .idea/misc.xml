@@ -43,6 +43,7 @@
         <entry key="app/src/main/res/drawable/ic_return.xml" value="0.2651282051282051" />
         <entry key="app/src/main/res/drawable/ic_volunteer.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/drawable/roundcorn.xml" value="0.2651282051282051" />
+        <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/font/raleway_black.xml" value="0.15989583333333332" />
         <entry key="app/src/main/res/layout/activity_about_us_info.xml" value="0.13125" />
         <entry key="app/src/main/res/layout/activity_aboutus.xml" value="0.25" />

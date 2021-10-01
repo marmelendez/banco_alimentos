@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
@@ -40,13 +41,20 @@ class BeVolunteerFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_be_volunteer, container, false)
 
+        val inputName = view.findViewById<EditText>(R.id.fragBeVolunteerEtName)
+        val inputEmail = view.findViewById<EditText>(R.id.fragBeVolunteerEtEmail)
+        val inputTelephone = view.findViewById<EditText>(R.id.fragBeVolunteerEtPhone)
+
         val btnSendData = view.findViewById<Button>(R.id.fragBeVolunteerBtnSend)
         val btnReturnHome = view.findViewById<TextView>(R.id.fragBeVolunteerTvReturnHome)
 
         // Click listener para boton de mandar informacion
         btnSendData.setOnClickListener {
-            Toast.makeText(it.context, "¡Gracias por tu interés! Pronto nos pondremos en contacto contigo", Toast.LENGTH_SHORT).show()
-            btnReturnHome.isVisible = true
+            if (validate(inputName) && validate(inputEmail) && validate(inputTelephone)) {
+
+                Toast.makeText(it.context, "¡Gracias por tu interés! Pronto nos pondremos en contacto contigo", Toast.LENGTH_SHORT).show()
+                btnReturnHome.isVisible = true
+            }
         }
 
         // Click listener para boton de regresa a pagina de ayuda
@@ -54,8 +62,15 @@ class BeVolunteerFragment : Fragment() {
             val intent = Intent(it.context, HelpActivity::class.java)
             startActivity(intent)
         }
-
         return view
+    }
+
+    private fun validate(field: EditText): Boolean {
+        if (field.text.toString().isEmpty()){
+            field.error = "Campo requerido"
+            return false
+        }
+        return true
     }
 
     companion object {
