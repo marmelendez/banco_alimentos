@@ -63,6 +63,7 @@ class CheckboxFragment : Fragment() {
     interface CallbackHelp {
         fun replaceExternalHelpFragment()
         fun replacePersonalHelpFragment()
+        fun replaceResponseFragment()
     }
 
     companion object {

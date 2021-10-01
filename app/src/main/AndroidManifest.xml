@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BancoDeAlimentos_Project">
         <activity
+            android:name=".BeBeneficiaryActivity"
+            android:exported="true" />
+        <activity
             android:name=".AboutUsInfoActivity"
             android:exported="true" />
         <activity

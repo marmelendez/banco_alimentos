@@ -8,14 +8,17 @@
     tools:context=".AskHelpActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:id="@+id/volunteerIvLogo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:contentDescription="@string/app_name"
+        android:background="@drawable/bg_red_part"
+        android:contentDescription="@string/askForHelp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/askHelpFragmentContainer"
-        app:srcCompat="@drawable/bg_red_part" />
+        app:layout_constraintTop_toBottomOf="@+id/askHelpTitle"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/askHelpMenuFragmentContainer"

@@ -25,91 +25,86 @@
         style="@style/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="32dp"
+        android:layout_marginStart="16dp"
         android:text="@string/name"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/extHelpEtName"
-        app:layout_constraintStart_toStartOf="@+id/extHelpTv"
-        app:layout_constraintTop_toTopOf="@+id/extHelpEtName" />
-
-    <TextView
-        android:id="@+id/extHelpTvPhone"
-        style="@style/label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/telephone"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/extHelpEtPhone"
-        app:layout_constraintStart_toStartOf="@+id/extHelpTvName"
-        app:layout_constraintTop_toTopOf="@+id/extHelpEtPhone" />
+        app:layout_constraintEnd_toStartOf="@+id/extHelpEtName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/extHelpTv" />
 
     <TextView
         android:id="@+id/extHelpTvEmail"
         style="@style/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="32dp"
         android:text="@string/email"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/extHelpEtEmail"
-        app:layout_constraintStart_toStartOf="@+id/extHelpTvPhone"
-        app:layout_constraintTop_toTopOf="@+id/extHelpEtEmail" />
+        app:layout_constraintStart_toStartOf="@+id/extHelpTvName"
+        app:layout_constraintTop_toBottomOf="@+id/extHelpTvName" />
+
+    <TextView
+        android:id="@+id/extHelpTvPhone"
+        style="@style/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="32dp"
+        android:text="@string/telephone"
+        app:layout_constraintStart_toStartOf="@+id/extHelpTvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/extHelpTvEmail" />
 
     <EditText
         android:id="@+id/extHelpEtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/rounded_corner"
         android:ems="10"
         android:hint="@string/name"
-        android:autofillHints="name"
-        android:inputType="textPersonName"
+        android:autofillHints="@string/name"
+        android:inputType="text"
         android:minHeight="48dp"
-        android:textAlignment="center"
-        android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/extHelpTv"
-        app:layout_constraintTop_toBottomOf="@+id/extHelpTv" />
-
-    <EditText
-        android:id="@+id/extHelpEtPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="@string/telephone"
-        android:autofillHints="phone"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/extHelpEtName"
-        app:layout_constraintTop_toBottomOf="@+id/extHelpEtName" />
-
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="@+id/extHelpTvName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/extHelpTvName" />
 
     <EditText
         android:id="@+id/extHelpEtEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/rounded_corner"
         android:ems="10"
         android:hint="@string/email"
-        android:autofillHints="emailAddress"
+        android:autofillHints="@string/email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        android:textAlignment="center"
-        android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="@+id/extHelpTvEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/extHelpTvEmail" />
+
+    <EditText
+        android:id="@+id/extHelpEtPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:paddingHorizontal="16dp"
         android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/extHelpEtPhone"
-        app:layout_constraintTop_toBottomOf="@+id/extHelpEtPhone" />
+        android:ems="10"
+        android:hint="@string/telephone"
+        android:autofillHints="@string/telephone"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="@+id/extHelpTvPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/extHelpTvPhone"/>
 
     <Button
         android:id="@+id/extHelpBtnNext"
@@ -122,6 +117,7 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extHelpEtEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/extHelpEtPhone" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

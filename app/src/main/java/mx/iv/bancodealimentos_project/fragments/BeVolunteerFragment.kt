@@ -51,11 +51,9 @@ class BeVolunteerFragment : Fragment() {
 
         // Click listener para boton de mandar informacion
         btnSendData.setOnClickListener {
-            listener?.replaceFormResponseFragment()
-           /* if (validate(inputName) && validate(inputEmail) && validate(inputTelephone)) {
-                listener?.replaceFormResponseFragment()
-                Toast.makeText(it.context, "¡Gracias por tu interés! Pronto nos pondremos en contacto contigo", Toast.LENGTH_SHORT).show()
-            }*/
+           if (validate(inputName) && validate(inputEmail) && validate(inputTelephone)) {
+               listener?.replaceFormResponseFragment()
+           }
         }
 
         return view

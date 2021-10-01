@@ -1,10 +1,13 @@
 package mx.iv.bancodealimentos_project.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import mx.iv.bancodealimentos_project.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,6 +23,7 @@ class PersonalHelpFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var listener: CheckboxFragment.CallbackHelp? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +38,37 @@ class PersonalHelpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_personal_help, container, false)
+        val view = inflater.inflate(R.layout.fragment_personal_help, container, false)
+        val inputName = view.findViewById<EditText>(R.id.perHelpEtName)
+        val inputTelephone = view.findViewById<EditText>(R.id.perHelpEtPhone)
+        val next = view.findViewById<Button>(R.id.perHelpBtnAskHelp)
+
+        // Click listener del boton siguiente
+        // para mostrar el fragmento personal help
+        next.setOnClickListener {
+            if (validate(inputName) && validate(inputTelephone)) {
+                listener?.replaceResponseFragment()
+            }
+        }
+        return view
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        listener = if (context is CheckboxFragment.CallbackHelp) {
+            context
+        }else {
+            throw RuntimeException("Must implement Callback in Activity")
+        }
+    }
+
+    private fun validate(field: EditText): Boolean {
+        if (field.text.toString().isEmpty()){
+            field.error = "Campo requerido"
+            return false
+        }
+        return true
     }
 
     companion object {

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import mx.iv.bancodealimentos_project.R
 
 
@@ -37,14 +38,26 @@ class ExternalHelpFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_external_help, container, false)
+        val inputName = view.findViewById<EditText>(R.id.extHelpEtName)
+        val inputTelephone = view.findViewById<EditText>(R.id.extHelpEtPhone)
         val next = view.findViewById<Button>(R.id.extHelpBtnNext)
 
         // Click listener del boton siguiente
         // para mostrar el fragmento personal help
         next.setOnClickListener {
-            listener?.replacePersonalHelpFragment()
+            if (validate(inputName) && validate(inputTelephone)) {
+                listener?.replacePersonalHelpFragment()
+            }
         }
         return view
+    }
+
+    private fun validate(field: EditText): Boolean {
+        if (field.text.toString().isEmpty()){
+            field.error = "Campo requerido"
+            return false
+        }
+        return true
     }
 
     override fun onAttach(context: Context) {

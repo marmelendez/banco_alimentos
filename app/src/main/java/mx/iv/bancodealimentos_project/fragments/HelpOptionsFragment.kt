@@ -7,12 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
-import mx.iv.bancodealimentos_project.CollectionPointActivity
-import mx.iv.bancodealimentos_project.DonationsActivity
-import mx.iv.bancodealimentos_project.R
-
-import mx.iv.bancodealimentos_project.AskHelpActivity
-import mx.iv.bancodealimentos_project.VolunteerActivity
+import mx.iv.bancodealimentos_project.*
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -62,7 +57,7 @@ class HelpOptionsFragment : Fragment() {
         }
 
         btnAsk.setOnClickListener {
-            val intent = Intent(it.context, AskHelpActivity::class.java)
+            val intent = Intent(it.context, BeBeneficiaryActivity::class.java)
             startActivity(intent)
         }
 

@@ -46,6 +46,18 @@ class AskHelpActivity : AppCompatActivity(), MenuFragment.CallbackMenu, Checkbox
         transaction.add(R.id.askHelpFragmentContainer, otherFrag, TAG_FRAGMENT)
         transaction.commit()
     }
+
+    override fun replaceResponseFragment() {
+        val currentFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT)
+        val transaction = supportFragmentManager.beginTransaction()
+        if(currentFragment != null) {
+            transaction.remove(currentFragment)
+        }
+        val formResponse = FormResponseFragment()
+        transaction.add(R.id.askHelpFragmentContainer, formResponse, TAG_FRAGMENT)
+        transaction.commit()
+    }
+
     companion object {
         private const val TAG_FRAGMENT = "fragment"
     }

@@ -20,7 +20,7 @@ class BeVolunteerActivity : AppCompatActivity(), MenuFragment.CallbackMenu, BeVo
 
         val serVoluntario = BeVolunteerFragment()
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.beVolunteerOptions, serVoluntario, TAG_VOLUNTEER_FRAG)
+        transaction.add(R.id.beVolunteerOptions, serVoluntario, TAG_FRAGMENT)
         transaction.commit()
     }
 
@@ -29,18 +29,17 @@ class BeVolunteerActivity : AppCompatActivity(), MenuFragment.CallbackMenu, BeVo
     }
 
     override fun replaceFormResponseFragment() {
-        val currentFragment = supportFragmentManager.findFragmentByTag(TAG_VOLUNTEER_FRAG)
+        val currentFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT)
         val transaction = supportFragmentManager.beginTransaction()
         if(currentFragment != null) {
             transaction.remove(currentFragment)
         }
         val formResponse = FormResponseFragment()
-        transaction.add(R.id.beVolunteerOptions, formResponse, TAG_VOLUNTEER_FRAG)
+        transaction.add(R.id.beVolunteerOptions, formResponse, TAG_FRAGMENT)
         transaction.commit()
     }
 
     companion object{
-        private const val TAG_FRAGMENT= "fragmentMenu"
-        private const val TAG_VOLUNTEER_FRAG = "fragmentVolunteer"
+        private const val TAG_FRAGMENT= "fragment"
     }
 }

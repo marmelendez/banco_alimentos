@@ -47,7 +47,9 @@
         <entry key="app/src/main/res/font/raleway_black.xml" value="0.15989583333333332" />
         <entry key="app/src/main/res/layout/activity_about_us_info.xml" value="0.13125" />
         <entry key="app/src/main/res/layout/activity_aboutus.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_ask_help.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_banco.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_be_beneficiary.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_be_volunteer.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_collection_point.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_donations.xml" value="0.253125" />
