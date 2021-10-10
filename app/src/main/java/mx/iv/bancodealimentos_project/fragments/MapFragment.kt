@@ -30,7 +30,6 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListener
 
     override fun onMapReady(p0: GoogleMap) {
         map = p0
-
         val foodBank = LatLng(20.65627693383698, -103.35532951647889)
         map.addMarker(MarkerOptions().position(foodBank).title("Banco de alimentos de Guadalajara"))
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(foodBank, 18f))

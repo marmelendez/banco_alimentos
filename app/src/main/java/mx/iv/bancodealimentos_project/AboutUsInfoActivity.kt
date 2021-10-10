@@ -2,10 +2,10 @@ package mx.iv.bancodealimentos_project
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
-
 import mx.iv.bancodealimentos_project.databinding.ActivityAboutUsInfoBinding
 import mx.iv.bancodealimentos_project.fragments.MenuFragment
+import mx.iv.bancodealimentos_project.fragments.AboutUsDataFragment
+
 
 class AboutUsInfoActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
     private lateinit var binding: ActivityAboutUsInfoBinding
@@ -15,6 +15,21 @@ class AboutUsInfoActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
         binding = ActivityAboutUsInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val extra = intent.extras
+        var id = "info"
+        if (extra != null) {
+            id = extra.getString("id").toString()
+        }
+
+        /*val menuFragment = MenuFragment()
+        val transaction1 = supportFragmentManager.beginTransaction()
+        transaction1.add(R.id.aboutUsInfoCvMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
+        transaction1.commit()*/
+
+        val aboutUsFragment = AboutUsDataFragment(id)
+        val transaction2 = supportFragmentManager.beginTransaction()
+        transaction2.add(R.id.aboutUsInfoCvAboutUsFragmentContainer, aboutUsFragment, TAG_FRAGMENT)
+        transaction2.commit()
     }
 
     override fun returnAct() {

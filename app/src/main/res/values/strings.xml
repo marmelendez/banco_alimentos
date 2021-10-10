@@ -42,6 +42,7 @@
     <string name="formResponseTitle">¡Gracias por tu interés!</string>
     <string name="beneficiaryQuestion">¿Que significa ser beneficiario?</string>
     <string name="formResponseDescription">Pronto nos contactaremos contigo</string>
+    <string name="number">7,366</string>
     <string name="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam mauris, aliquet eget libero nec, laoreet fringilla arcu. </string>
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -47,10 +47,17 @@
         <entry key="app/src/main/res/drawable/ic_people.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/drawable/ic_return.xml" value="0.2651282051282051" />
         <entry key="app/src/main/res/drawable/ic_volunteer.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/drawable/ic_white_data.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/drawable/ic_white_fam.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/drawable/ic_white_info.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/drawable/ic_white_mision.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/drawable/ic_white_people.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/drawable/ic_white_store.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/drawable/ic_white_vision.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/drawable/roundcorn.xml" value="0.2651282051282051" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/font/raleway_black.xml" value="0.15989583333333332" />
-        <entry key="app/src/main/res/layout/activity_about_us_info.xml" value="0.13125" />
+        <entry key="app/src/main/res/layout/activity_about_us_info.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_aboutus.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_ask_help.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_banco.xml" value="0.22" />
@@ -69,6 +76,7 @@
         <entry key="app/src/main/res/layout/activity_volunteer.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_volunteer2.xml" value="0.14635416666666667" />
         <entry key="app/src/main/res/layout/card_item_aboutus.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_about_us_data.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_be_volunteer.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_checkbox.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_external_help.xml" value="0.253125" />
@@ -84,6 +92,7 @@
         <entry key="app/src/main/res/layout/fragment_personal_help.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_registrarse.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/slider_item.xml" value="0.253125" />
         <entry key="app/src/main/res/menu/menu_general.xml" value="0.253125" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/bg_red.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/bg_red_round.xml" value="0.14583333333333334" />

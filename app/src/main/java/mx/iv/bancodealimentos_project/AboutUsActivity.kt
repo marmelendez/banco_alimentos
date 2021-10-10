@@ -22,13 +22,15 @@ class AboutUsActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
         transaction.add(R.id.aboutUsCvMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
 
         binding.aboutUsCDinfo.setOnClickListener {
-            Toast.makeText(this, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
-            /*val intent = Intent(it.context, AboutUsInfoActivity::class.java)
-            startActivity(intent)*/
+            val intent = Intent(it.context, AboutUsInfoActivity::class.java)
+            intent.putExtra("id", "info")
+            startActivity(intent)
         }
 
         binding.aboutUsCDdata.setOnClickListener {
-            Toast.makeText(this, "Pronto contaremos con este apartado", Toast.LENGTH_SHORT).show()
+            val intent = Intent(it.context, AboutUsInfoActivity::class.java)
+            intent.putExtra("id", "data")
+            startActivity(intent)
         }
     }
 
