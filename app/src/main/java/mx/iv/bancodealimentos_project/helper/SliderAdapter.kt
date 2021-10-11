@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.bumptech.glide.Glide
 import com.smarteist.autoimageslider.SliderViewAdapter
 import mx.iv.bancodealimentos_project.R
 import java.util.ArrayList

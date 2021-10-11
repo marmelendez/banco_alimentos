@@ -18,7 +18,7 @@ private const val ARG_PARAM2 = "param2"
  * Fragmento con formulario de informacion para el apartado de
  * solicitar ayuda de persona que necesita ayuda
  **/
-class ExternalHelpFragment : Fragment() {
+class ExternalHelpFragment() : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -39,6 +39,7 @@ class ExternalHelpFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_external_help, container, false)
         val inputName = view.findViewById<EditText>(R.id.extHelpEtName)
+        val inputEmal = view.findViewById<EditText>(R.id.extHelpEtEmail)
         val inputTelephone = view.findViewById<EditText>(R.id.extHelpEtPhone)
         val next = view.findViewById<Button>(R.id.extHelpBtnNext)
 
@@ -46,7 +47,7 @@ class ExternalHelpFragment : Fragment() {
         // para mostrar el fragmento personal help
         next.setOnClickListener {
             if (validate(inputName) && validate(inputTelephone)) {
-                listener?.replacePersonalHelpFragment()
+                listener?.replacePersonalHelpFragment(inputName.text.toString(), inputEmal.text.toString(), inputTelephone.text.toString())
             }
         }
         return view

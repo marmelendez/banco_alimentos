@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.google.firebase.firestore.FirebaseFirestore
 import mx.iv.bancodealimentos_project.AskHelpActivity
 import mx.iv.bancodealimentos_project.HelpActivity
 import mx.iv.bancodealimentos_project.R
@@ -44,6 +45,8 @@ class BeVolunteerFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_be_volunteer, container, false)
 
+        val db = FirebaseFirestore.getInstance()
+
         val inputName = view.findViewById<EditText>(R.id.fragBeVolunteerEtName)
         val inputEmail = view.findViewById<EditText>(R.id.fragBeVolunteerEtEmail)
         val inputTelephone = view.findViewById<EditText>(R.id.fragBeVolunteerEtPhone)
@@ -52,6 +55,9 @@ class BeVolunteerFragment : Fragment() {
         // Click listener para boton de mandar informacion
         btnSendData.setOnClickListener {
            if (validate(inputName) && validate(inputEmail) && validate(inputTelephone)) {
+               db.collection("volunteers").document(inputEmail.text.toString()).set(
+                   hashMapOf("name" to inputName.text.toString(), "telephone" to inputTelephone.text.toString())
+               )
                listener?.replaceFormResponseFragment()
            }
         }

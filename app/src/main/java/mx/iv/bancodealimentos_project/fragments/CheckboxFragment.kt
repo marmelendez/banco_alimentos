@@ -45,7 +45,7 @@ class CheckboxFragment : Fragment() {
 
         // Si se selecciona el checkbox de ayuda para mi
         // se muestra el fragmento de personal help
-        checkboxPerHelp.setOnCheckedChangeListener { _, _ -> listener?.replacePersonalHelpFragment() }
+        checkboxPerHelp.setOnCheckedChangeListener { _, _ -> listener?.replacePersonalHelpFragment("", "", "") }
 
         return view
     }
@@ -62,7 +62,7 @@ class CheckboxFragment : Fragment() {
 
     interface CallbackHelp {
         fun replaceExternalHelpFragment()
-        fun replacePersonalHelpFragment()
+        fun replacePersonalHelpFragment(name: String, email: String, phone: String)
         fun replaceResponseFragment()
     }
 

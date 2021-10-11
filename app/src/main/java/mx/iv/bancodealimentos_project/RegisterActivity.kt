@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import mx.iv.bancodealimentos_project.fragments.LogInFragment
 import mx.iv.bancodealimentos_project.fragments.SignInFragment
@@ -23,6 +24,7 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
     private lateinit var loginFragment: LogInFragment
     private lateinit var signInFragment: SignInFragment
     private lateinit var auth: FirebaseAuth
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         auth = FirebaseAuth.getInstance();
@@ -85,6 +87,9 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     Log.d("FIREBASE", "Registro exitoso")
+                    db.collection("users").document(email).set(
+                        hashMapOf("email" to email, "password" to password)
+                    )
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                 } else {

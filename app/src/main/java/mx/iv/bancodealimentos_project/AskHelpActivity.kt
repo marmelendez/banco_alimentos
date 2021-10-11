@@ -36,13 +36,13 @@ class AskHelpActivity : AppCompatActivity(), MenuFragment.CallbackMenu, Checkbox
         transaction.commit()
     }
 
-    override fun replacePersonalHelpFragment() {
+    override fun replacePersonalHelpFragment(name: String, email: String, phone: String) {
         var currentFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT)
         var transaction = supportFragmentManager.beginTransaction()
         if(currentFragment != null) {
             transaction.remove(currentFragment)
         }
-        val otherFrag = PersonalHelpFragment()
+        val otherFrag = PersonalHelpFragment(listOf(name, email, phone))
         transaction.add(R.id.askHelpFragmentContainer, otherFrag, TAG_FRAGMENT)
         transaction.commit()
     }
