@@ -12,7 +12,6 @@ class PaymentDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_payment_details)
         binding = ActivityPaymentDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -21,8 +20,6 @@ class PaymentDetailsActivity : AppCompatActivity() {
         try {
             val jsonObj = JSONObject(intent.getStringExtra("PaymentDetails"))
             showDetails(jsonObj.getJSONObject("response"), intent.getStringExtra("PaymentAmount"))
-
-
         } catch (e : JSONException) {
             e.printStackTrace()
         }

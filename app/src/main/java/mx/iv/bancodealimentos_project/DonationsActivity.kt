@@ -20,7 +20,7 @@ class DonationsActivity : AppCompatActivity(),  MenuFragment.CallbackMenu  {
     private val config: PayPalConfiguration = PayPalConfiguration()
         .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
         .clientId(Config.PAYPAL_CLIENT_ID)
-    private val PAYPAL_REQUEST_CODE : Int = 7171
+    private val PAYPAL_REQUEST_CODE : Int = 123
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
