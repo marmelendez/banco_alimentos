@@ -51,7 +51,7 @@ class PersonalHelpFragment(val data: List<String>) : Fragment() {
         // Click listener del boton siguiente
         // para mostrar el fragmento personal help
         next.setOnClickListener {
-            if (validate(inputName) && validate(inputTelephone)) {
+            if (validate(inputName) && validate(inputTelephone, "phone")) {
                 if (data[0] != "") {
                     db.collection("beneficiary").document(inputTelephone.text.toString()).set(
                         hashMapOf(
@@ -85,7 +85,11 @@ class PersonalHelpFragment(val data: List<String>) : Fragment() {
         }
     }
 
-    private fun validate(field: EditText): Boolean {
+    private fun validate(field: EditText, type: String = ""): Boolean {
+        if (type == "phone" && field.text.toString().length != 10 ) {
+            field.error = "10 numeros"
+            return false
+        }
         if (field.text.toString().isEmpty()){
             field.error = "Campo requerido"
             return false

@@ -54,7 +54,7 @@ class BeVolunteerFragment : Fragment() {
 
         // Click listener para boton de mandar informacion
         btnSendData.setOnClickListener {
-           if (validate(inputName) && validate(inputEmail) && validate(inputTelephone)) {
+           if (validate(inputName) && validate(inputEmail) && validate(inputTelephone, "phone")) {
                db.collection("volunteers").document(inputEmail.text.toString()).set(
                    hashMapOf("name" to inputName.text.toString(), "telephone" to inputTelephone.text.toString())
                )
@@ -65,7 +65,11 @@ class BeVolunteerFragment : Fragment() {
         return view
     }
 
-    private fun validate(field: EditText): Boolean {
+    private fun validate(field: EditText, type: String = ""): Boolean {
+        if (type == "phone" && field.text.toString().length != 10 ) {
+            field.error = "10 numeros"
+            return false
+        }
         if (field.text.toString().isEmpty()){
             field.error = "Campo requerido"
             return false

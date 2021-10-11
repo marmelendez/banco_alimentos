@@ -46,14 +46,18 @@ class ExternalHelpFragment() : Fragment() {
         // Click listener del boton siguiente
         // para mostrar el fragmento personal help
         next.setOnClickListener {
-            if (validate(inputName) && validate(inputTelephone)) {
+            if (validate(inputName) && validate(inputTelephone, "phone")) {
                 listener?.replacePersonalHelpFragment(inputName.text.toString(), inputEmal.text.toString(), inputTelephone.text.toString())
             }
         }
         return view
     }
 
-    private fun validate(field: EditText): Boolean {
+    private fun validate(field: EditText, type: String = ""): Boolean {
+        if (type == "phone" && field.text.toString().length != 10 ) {
+            field.error = "10 numeros"
+            return false
+        }
         if (field.text.toString().isEmpty()){
             field.error = "Campo requerido"
             return false
