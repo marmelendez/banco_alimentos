@@ -49,7 +49,9 @@ class SignInFragment : Fragment() {
 
         btnSignIn.setOnClickListener {
             if (inputPassword.text.toString() == inputConfirmPassword.text.toString()) {
-                listener?.runSignIn(inputEmail.text.toString(), inputPassword.text.toString())
+                if (validate(inputEmail) && validate(inputPassword)) {
+                    listener?.runSignIn(inputEmail.text.toString(), inputPassword.text.toString())
+                }
             } else {
                 Toast.makeText(it.context, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             }
@@ -61,6 +63,14 @@ class SignInFragment : Fragment() {
         }
 
         return view
+    }
+
+    private fun validate(field: EditText, type: String = ""): Boolean {
+        if (field.text.toString().isEmpty()){
+            field.error = "Campo requerido"
+            return false
+        }
+        return true
     }
 
     override fun onAttach(context: Context) {

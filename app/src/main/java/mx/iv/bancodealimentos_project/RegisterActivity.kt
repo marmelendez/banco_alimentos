@@ -74,7 +74,7 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     Log.d("FIREBASE", "Login exitoso")
-                    val intent = Intent(this, HomeActivity::class.java)
+                    val intent = Intent(this, AccountActivity::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this, "${it.exception}", Toast.LENGTH_SHORT).show()
@@ -90,12 +90,25 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
                     db.collection("users").document(email).set(
                         hashMapOf("email" to email, "password" to password)
                     )
-                    val intent = Intent(this, HomeActivity::class.java)
+                    val intent = Intent(this, AccountActivity::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this, "${it.exception}", Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        checkCurrentUser()
+    }
+
+    fun checkCurrentUser() {
+        if (Firebase.auth.currentUser != null) {
+            Toast.makeText(this, "Bienvenido de nuevo ${Firebase.auth.currentUser?.email}",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, AccountActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun replaceFrag() {

@@ -44,7 +44,9 @@ class LogInFragment : Fragment() {
         val inputPassword = view.findViewById<EditText>(R.id.loginEtPassword)
 
         btnLogIn.setOnClickListener {
-            listener?.runLogIn(inputEmail.text.toString(), inputPassword.text.toString())
+            if (validate(inputEmail) && validate(inputPassword)) {
+                listener?.runLogIn(inputEmail.text.toString(), inputPassword.text.toString())
+            }
         }
 
         btnSignIn.setOnClickListener {
@@ -52,6 +54,14 @@ class LogInFragment : Fragment() {
         }
 
         return view
+    }
+
+    private fun validate(field: EditText, type: String = ""): Boolean {
+        if (field.text.toString().isEmpty()){
+            field.error = "Campo requerido"
+            return false
+        }
+        return true
     }
 
     override fun onAttach(context: Context) {
