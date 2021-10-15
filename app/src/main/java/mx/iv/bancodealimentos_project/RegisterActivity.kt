@@ -88,7 +88,7 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
                 if (it.isSuccessful) {
                     Log.d("FIREBASE", "Registro exitoso")
                     db.collection("users").document(email).set(
-                        hashMapOf("email" to email, "password" to password)
+                        hashMapOf("email" to email)
                     )
                     val intent = Intent(this, AccountActivity::class.java)
                     startActivity(intent)
