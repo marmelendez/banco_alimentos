@@ -12,25 +12,17 @@ import com.smarteist.autoimageslider.SliderViewAdapter
 import mx.iv.bancodealimentos_project.R
 import java.util.ArrayList
 
-class SliderAdapter(context: Context?, sliderDataArrayList: ArrayList<AboutUsData>) : SliderViewAdapter<SliderAdapter.SliderAdapterViewHolder>() {
-    // list for storing urls of images.
+class SliderAdapter(sliderDataArrayList: ArrayList<AboutUsData>) : SliderViewAdapter<SliderAdapter.SliderAdapterViewHolder>() {
     private val listItems: List<AboutUsData>
 
-    // We are inflating the slider_layout
-    // inside on Create View Holder method.
     override fun onCreateViewHolder(parent: ViewGroup): SliderAdapterViewHolder {
         val inflate: View = LayoutInflater.from(parent.context).inflate(R.layout.slider_item, null)
         return SliderAdapterViewHolder(inflate)
     }
 
-    // Inside on bind view holder we will
-    // set data to item of Slider View.
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onBindViewHolder(viewHolder: SliderAdapterViewHolder, position: Int) {
         val sliderItem: AboutUsData = listItems[position]
-
-        // Glide is use to load image
-        // from url in your imageview.
 
         viewHolder.title.text = sliderItem.title
         viewHolder.description.text = sliderItem.description
@@ -38,31 +30,18 @@ class SliderAdapter(context: Context?, sliderDataArrayList: ArrayList<AboutUsDat
         viewHolder.layout.background = viewHolder.view.resources.getDrawable(sliderItem.bg)
     }
 
-    // this method will return
-    // the count of our list.
     override fun getCount(): Int {
         return listItems.size
     }
 
     class SliderAdapterViewHolder(view: View) : ViewHolder(view) {
-        // Adapter class for initializing
-        // the views of our slider view.
-        var view: View
-        var icon: ImageView
-        var title: TextView
-        var description: TextView
-        var layout: LinearLayout
-
-        init {
-            this.view = view
-            this.icon = view.findViewById(R.id.sliderItemIvIcon)
-            this.title = view.findViewById(R.id.sliderItemTvTitle)
-            this.description = view.findViewById(R.id.sliderItemTvDescription)
-            this.layout = view.findViewById(R.id.sliderLLlayout)
-        }
+        var view: View = view
+        var icon: ImageView = view.findViewById(R.id.sliderItemIvIcon)
+        var title: TextView = view.findViewById(R.id.sliderItemTvTitle)
+        var description: TextView = view.findViewById(R.id.sliderItemTvDescription)
+        var layout: LinearLayout = view.findViewById(R.id.sliderLLlayout)
     }
 
-    // Constructor
     init {
         listItems = sliderDataArrayList
     }
