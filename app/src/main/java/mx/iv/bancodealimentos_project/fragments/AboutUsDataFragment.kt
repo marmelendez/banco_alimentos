@@ -5,33 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.smarteist.autoimageslider.SliderPager
 import com.smarteist.autoimageslider.SliderView
 import mx.iv.bancodealimentos_project.R
 import mx.iv.bancodealimentos_project.helper.AboutUsData
 import mx.iv.bancodealimentos_project.helper.SliderAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AboutUsDataFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class AboutUsDataFragment(val idAboutUs: String) : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+class AboutUsDataFragment(private val idAboutUs: String) : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_about_us_data, container, false)
         val sliderDataArrayList: ArrayList<AboutUsData> = ArrayList()
         val sliderView = view.findViewById<SliderView>(R.id.aboutUsInfoSvSlider)

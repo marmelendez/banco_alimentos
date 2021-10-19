@@ -10,27 +10,8 @@ import android.widget.Button
 import android.widget.EditText
 import mx.iv.bancodealimentos_project.R
 
-
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * Fragmento con formulario de informacion para el apartado de
- * solicitar ayuda de persona que necesita ayuda
- **/
 class ExternalHelpFragment() : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
     private var listener: CheckboxFragment.CallbackHelp? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -73,16 +54,5 @@ class ExternalHelpFragment() : Fragment() {
         }else {
             throw RuntimeException("Must implement Callback in Activity")
         }
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ExternalHelpFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }

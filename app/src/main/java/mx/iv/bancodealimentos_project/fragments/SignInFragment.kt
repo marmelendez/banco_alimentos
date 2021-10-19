@@ -13,25 +13,12 @@ import android.widget.Toast
 import mx.iv.bancodealimentos_project.R
 import java.lang.RuntimeException
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
  * Fragmento con el formulario para registrarse
  */
 class SignInFragment : Fragment() {
 
-    private var param1: String? = null
-    private var param2: String? = null
     private var listener: LogInFragment.Callback? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -65,7 +52,7 @@ class SignInFragment : Fragment() {
         return view
     }
 
-    private fun validate(field: EditText, type: String = ""): Boolean {
+    private fun validate(field: EditText): Boolean {
         if (field.text.toString().isEmpty()){
             field.error = "Campo requerido"
             return false
@@ -83,13 +70,4 @@ class SignInFragment : Fragment() {
         }
     }
 
-    companion object {
-        fun newInstance(param1: String, param2: String) =
-            SignInFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }
