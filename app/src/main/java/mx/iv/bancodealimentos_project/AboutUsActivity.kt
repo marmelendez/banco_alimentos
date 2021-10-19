@@ -3,9 +3,7 @@ package mx.iv.bancodealimentos_project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import mx.iv.bancodealimentos_project.databinding.ActivityAboutusBinding
-import mx.iv.bancodealimentos_project.databinding.ActivityHomeBinding
 import mx.iv.bancodealimentos_project.fragments.MenuFragment
 
 class AboutUsActivity : AppCompatActivity(), MenuFragment.CallbackMenu {

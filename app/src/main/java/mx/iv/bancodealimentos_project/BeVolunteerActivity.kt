@@ -2,9 +2,7 @@ package mx.iv.bancodealimentos_project
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import mx.iv.bancodealimentos_project.fragments.BeVolunteerFragment
-import mx.iv.bancodealimentos_project.fragments.ExternalHelpFragment
 import mx.iv.bancodealimentos_project.fragments.FormResponseFragment
 import mx.iv.bancodealimentos_project.fragments.MenuFragment
 

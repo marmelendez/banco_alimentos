@@ -26,8 +26,8 @@ class AskHelpActivity : AppCompatActivity(), MenuFragment.CallbackMenu, Checkbox
 
 
     override fun replaceExternalHelpFragment() {
-        var currentFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT)
-        var transaction = supportFragmentManager.beginTransaction()
+        val currentFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT)
+        val transaction = supportFragmentManager.beginTransaction()
         if(currentFragment != null) {
             transaction.remove(currentFragment)
         }
@@ -37,8 +37,8 @@ class AskHelpActivity : AppCompatActivity(), MenuFragment.CallbackMenu, Checkbox
     }
 
     override fun replacePersonalHelpFragment(name: String, email: String, phone: String) {
-        var currentFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT)
-        var transaction = supportFragmentManager.beginTransaction()
+        val currentFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT)
+        val transaction = supportFragmentManager.beginTransaction()
         if(currentFragment != null) {
             transaction.remove(currentFragment)
         }

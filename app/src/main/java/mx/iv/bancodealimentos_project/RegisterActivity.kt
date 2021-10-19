@@ -100,7 +100,7 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
         checkCurrentUser()
     }
 
-    fun checkCurrentUser() {
+    private fun checkCurrentUser() {
         if (Firebase.auth.currentUser != null) {
             Toast.makeText(this, "Bienvenido de nuevo ${Firebase.auth.currentUser?.email}",Toast.LENGTH_SHORT).show()
             val intent = Intent(this, AccountActivity::class.java)

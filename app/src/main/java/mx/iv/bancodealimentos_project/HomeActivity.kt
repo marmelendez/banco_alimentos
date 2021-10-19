@@ -3,7 +3,6 @@ package mx.iv.bancodealimentos_project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import mx.iv.bancodealimentos_project.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity(){

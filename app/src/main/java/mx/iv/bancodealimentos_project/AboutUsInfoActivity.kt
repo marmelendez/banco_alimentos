@@ -21,11 +21,6 @@ class AboutUsInfoActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
             id = extra.getString("id").toString()
         }
 
-        /*val menuFragment = MenuFragment()
-        val transaction1 = supportFragmentManager.beginTransaction()
-        transaction1.add(R.id.aboutUsInfoCvMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
-        transaction1.commit()*/
-
         val aboutUsFragment = AboutUsDataFragment(id)
         val transaction2 = supportFragmentManager.beginTransaction()
         transaction2.add(R.id.aboutUsInfoCvAboutUsFragmentContainer, aboutUsFragment, TAG_FRAGMENT)
@@ -35,8 +30,6 @@ class AboutUsInfoActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
     override fun returnAct() {
         finish()
     }
-
-
 
     companion object {
         private const val TAG_FRAGMENT = "fragment"
