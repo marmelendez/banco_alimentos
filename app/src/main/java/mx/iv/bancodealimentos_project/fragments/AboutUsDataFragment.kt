@@ -32,7 +32,7 @@ class AboutUsDataFragment(private val idAboutUs: String) : Fragment() {
             sliderDataArrayList.add(AboutUsData(getString(R.string.number),getString(R.string.paragraph), R.drawable.ic_white_data, R.drawable.data4))
         }
 
-        val adapter = SliderAdapter(view.context, sliderDataArrayList)
+        val adapter = SliderAdapter(sliderDataArrayList)
 
         sliderView.autoCycleDirection = SliderView.LAYOUT_DIRECTION_LTR
         sliderView.setSliderAdapter(adapter)
