@@ -15,9 +15,6 @@ import mx.iv.bancodealimentos_project.fragments.SignInFragment
 import mx.iv.bancodealimentos_project.databinding.ActivityRegisterBinding
 import mx.iv.bancodealimentos_project.fragments.MenuFragment
 
-
-
-
 class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragment.CallbackMenu  {
 
     private lateinit var binding: ActivityRegisterBinding // Nos permite acceder a las views del layout de la activity
@@ -27,7 +24,7 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
     private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        auth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance()
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -117,7 +114,8 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
 
     // Implementa metodos de la clase Callbackmenu (declarada en Fragments.MenuFragment)
     override fun returnAct() {
-        finish()
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
     }
 
     companion object {

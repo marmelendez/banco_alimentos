@@ -1,6 +1,6 @@
 package mx.iv.bancodealimentos_project
 
-import android.app.Activity
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -35,26 +35,26 @@ class DonationsActivity : AppCompatActivity(),  MenuFragment.CallbackMenu  {
         transactionMenu.add(R.id.donationsMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
         transactionMenu.commit()
 
-        /*PAYPAL SERVICE
+        //PAYPAL SERVICE
         val intent = Intent(this, PayPalService::class.java)
         intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config)
-        startService(intent)*/
+        startService(intent)
 
 
         binding.donationsBtnDonate.setOnClickListener {
             amount = binding.donationsEtAmount.text.toString()
-            if (amount.isNotBlank() && amount.toDouble() > 0) {
+            if (amount.isNotBlank() && amount.toDouble() > 0){
                 //throw RuntimeException("Test Crash")
-                //processPayment()
+                processPayment()
             } else {
                 Toast.makeText(this, "Porfavor introduce una cantidad", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-
     private fun processPayment() {
-        val payment = PayPalPayment(BigDecimal(amount),
+        val payment = PayPalPayment(
+            BigDecimal(amount),
                 "MXN",
                 "Donacion al banco de alimentos",
                 PayPalPayment.PAYMENT_INTENT_SALE)
@@ -78,7 +78,7 @@ class DonationsActivity : AppCompatActivity(),  MenuFragment.CallbackMenu  {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PAYPAL_REQUEST_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
+            if (resultCode == RESULT_OK) {
                 val confirmation = data?.getParcelableExtra<PaymentConfirmation>(PaymentActivity.EXTRA_RESULT_CONFIRMATION)
                 if (confirmation != null) {
                     try {
@@ -94,7 +94,7 @@ class DonationsActivity : AppCompatActivity(),  MenuFragment.CallbackMenu  {
             } else {
                 Toast.makeText(this, "Pago cancelado", Toast.LENGTH_SHORT).show()
             }
-        } else if(resultCode == Activity.RESULT_CANCELED) {
+        } else if(resultCode == RESULT_CANCELED) {
             Toast.makeText(this, "No valido", Toast.LENGTH_SHORT).show()
         }
     }

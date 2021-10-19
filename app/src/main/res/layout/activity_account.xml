@@ -20,7 +20,6 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/accountMenuFragmentContainer"
-        android:name="mx.iv.bancodealimentos_project.fragments.MenuFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
@@ -40,15 +39,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <ImageView
-        android:id="@+id/accountBtnLogOut"
+    <TextView
+        android:id="@+id/accountTvDonations"
+        style="@style/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/accountTitle"
+        android:layout_marginVertical="16dp"
+        android:text="@string/userdonations"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/accountTitle"
-        app:srcCompat="@drawable/ic_log_out" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountTitle" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/accountFcContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountTvDonations" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

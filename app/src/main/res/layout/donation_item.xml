@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:cardMaxElevation="8dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/purchaseTvID"
+                style="@style/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/donationID"
+                android:textColor="@color/green"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/donationItemTvIdValue"
+                style="@style/input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:text="@string/donationIDValue"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/purchaseTvID"
+                app:layout_constraintStart_toEndOf="@+id/purchaseTvID"
+                app:layout_constraintTop_toTopOf="@+id/purchaseTvID" />
+
+            <TextView
+                android:id="@+id/purchaseTvTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                style="@style/label"
+                android:text="@string/donationAmount"
+                android:textColor="@color/green"
+                app:layout_constraintStart_toStartOf="@+id/purchaseTvID"
+                app:layout_constraintTop_toBottomOf="@+id/purchaseTvID" />
+
+            <TextView
+                android:id="@+id/donationItemTvAmountValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/input"
+                android:text="@string/donationAmountValue"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/purchaseTvTotal"
+                app:layout_constraintStart_toStartOf="@+id/donationItemTvIdValue"
+                app:layout_constraintTop_toTopOf="@+id/purchaseTvTotal" />
+
+            <TextView
+                android:id="@+id/purchaseTvPayment"
+                style="@style/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/donationDate"
+                android:textColor="@color/green"
+                app:layout_constraintStart_toStartOf="@+id/purchaseTvTotal"
+                app:layout_constraintTop_toBottomOf="@+id/purchaseTvTotal" />
+
+            <TextView
+                android:id="@+id/donationItemTvDateValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/input"
+                android:text="@string/donationDateValue"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/purchaseTvPayment"
+                app:layout_constraintStart_toStartOf="@+id/donationItemTvAmountValue"
+                app:layout_constraintTop_toTopOf="@+id/purchaseTvPayment" />
+
+            <ImageView
+                android:id="@+id/sliderItemIvIcon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/donation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donationItemTvDateValue"
+                app:srcCompat="@drawable/ic_donation" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

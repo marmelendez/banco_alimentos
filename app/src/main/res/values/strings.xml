@@ -13,7 +13,9 @@
     <string name="about">Sobre nosotros</string>
     <string name="help">¿Cómo ayudar?</string>
     <string name="donations">Donaciones</string>
+    <string name="userdonations">Historial de donaciones</string>
     <string name="account">Mi cuenta</string>
+    <string name="logout">Log out</string>
     <string name="askForHelp">Ser beneficiario</string>
     <string name="pickupPoints">Centros de acopio </string>
     <string name="volunteers">Voluntarios</string>
@@ -44,6 +46,15 @@
     <string name="formResponseDescription">Pronto nos contactaremos contigo</string>
     <string name="number">7,366</string>
     <string name="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam mauris, aliquet eget libero nec, laoreet fringilla arcu. </string>
+
+    <!--Donations item-->
+    <string name="donationID">ID: </string>
+    <string name="donationAmount">Cantidad: </string>
+    <string name="donationDate">Fecha: </string>
+    <string name="donationIDValue"> 000 </string>
+    <string name="donationAmountValue"> $ 100.00</string>
+    <string name="donationDateValue">DD/MM/AAAA</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
