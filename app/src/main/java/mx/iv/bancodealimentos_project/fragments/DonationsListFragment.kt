@@ -16,7 +16,11 @@ import mx.iv.bancodealimentos_project.helper.DonationData
 import mx.iv.bancodealimentos_project.helper.DonationsAdapter
 import java.util.ArrayList
 
+/**
+ * Fragmento para mostrar donaciones de un usuario
+ */
 class DonationsListFragment : Fragment() {
+
     private lateinit var recyclerList: RecyclerView
     private lateinit var donationsList: MutableList<DonationData>
     private val db = FirebaseFirestore.getInstance()
@@ -33,6 +37,7 @@ class DonationsListFragment : Fragment() {
         return view
     }
 
+    // Obtiene las donaciones de un usuario de la base de datos Firestore
     private fun getDonationsList(view: View) {
         db.collection("donations")
             .whereEqualTo("email", Firebase.auth.currentUser?.email.toString())

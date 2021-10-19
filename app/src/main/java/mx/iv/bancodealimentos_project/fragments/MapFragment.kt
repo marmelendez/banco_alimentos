@@ -11,7 +11,9 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import mx.iv.bancodealimentos_project.R
 
-
+/**
+ * Fragmento de google maps con ubicación de la organización
+ */
 class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListener {
 
     private lateinit var map : GoogleMap
@@ -27,6 +29,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListener
         return view
     }
 
+    // Definir longitud y latitud de la organización en el mapa
     override fun onMapReady(p0: GoogleMap) {
         map = p0
         val foodBank = LatLng(20.65627693383698, -103.35532951647889)

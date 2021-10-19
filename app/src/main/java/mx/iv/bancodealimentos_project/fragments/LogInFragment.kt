@@ -43,6 +43,7 @@ class LogInFragment : Fragment() {
         return view
     }
 
+    // Validar que el input del usuario no este vacio
     private fun validate(field: EditText): Boolean {
         if (field.text.toString().isEmpty()){
             field.error = "Campo requerido"

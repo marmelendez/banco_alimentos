@@ -10,6 +10,10 @@ import android.widget.Button
 import mx.iv.bancodealimentos_project.HelpActivity
 import mx.iv.bancodealimentos_project.R
 
+/**
+ * Fragmento para agradecer cuando una persona solicita
+ * Ser Voluntario o Ser Beneficiario
+ */
 class FormResponseFragment : Fragment() {
 
     override fun onCreateView(
@@ -17,6 +21,7 @@ class FormResponseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_form_response, container, false)
+
         val btnReturnHome = view.findViewById<Button>(R.id.fragFormResponseBtnReturn)
 
         btnReturnHome.setOnClickListener {

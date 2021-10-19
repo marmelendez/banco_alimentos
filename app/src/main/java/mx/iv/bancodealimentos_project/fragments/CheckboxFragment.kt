@@ -9,6 +9,11 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import mx.iv.bancodealimentos_project.R
 
+/**
+ * Fragmento para mostrar dos checkbox en Ser beneficiario
+ * uno cuando solicitas ayuda para ti mismo
+ * otro para cuando solicitas para otra persona
+ */
 class CheckboxFragment : Fragment() {
     private var listener: CallbackHelp? = null
 

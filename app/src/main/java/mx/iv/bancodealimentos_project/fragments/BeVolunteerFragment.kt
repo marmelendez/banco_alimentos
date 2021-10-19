@@ -11,7 +11,9 @@ import android.widget.EditText
 import com.google.firebase.firestore.FirebaseFirestore
 import mx.iv.bancodealimentos_project.R
 
-
+/**
+ * Fragmento donde se implementa el formulario de Ser Voluntario
+ */
 class BeVolunteerFragment : Fragment() {
     private var listener: CallbackVolunteer? = null
 
@@ -23,6 +25,7 @@ class BeVolunteerFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_be_volunteer, container, false)
 
+        // Base de datos
         val db = FirebaseFirestore.getInstance()
 
         val inputName = view.findViewById<EditText>(R.id.fragBeVolunteerEtName)
@@ -33,6 +36,7 @@ class BeVolunteerFragment : Fragment() {
         // Click listener para boton de mandar informacion
         btnSendData.setOnClickListener {
            if (validate(inputName) && validate(inputEmail) && validate(inputTelephone, "phone")) {
+               // Se guardan los datos ingresados al validarlos
                db.collection("volunteers").document(inputEmail.text.toString()).set(
                    hashMapOf("name" to inputName.text.toString(), "telephone" to inputTelephone.text.toString())
                )
@@ -43,6 +47,7 @@ class BeVolunteerFragment : Fragment() {
         return view
     }
 
+    // Funcion para validar los datos ingresados por el usuario
     private fun validate(field: EditText, type: String = ""): Boolean {
         if (type == "phone" && field.text.toString().length != 10 ) {
             field.error = "10 numeros"

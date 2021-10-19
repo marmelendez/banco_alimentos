@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import mx.iv.bancodealimentos_project.*
 
+/**
+ * Fragmento con menu de opciones para ayudar
+ */
 class HelpOptionsFragment : Fragment() {
 
     override fun onCreateView(

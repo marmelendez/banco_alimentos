@@ -38,6 +38,8 @@ class PersonalHelpFragment(val data: List<String>) : Fragment() {
         next.setOnClickListener {
             if (validate(inputName) && validate(inputTelephone, "phone")) {
                 if (data[0] != "") {
+                    // Se guardan los datos ingresados al validarlos
+                    // en caso de solicitar para otra persona
                     db.collection("beneficiary").document(inputTelephone.text.toString()).set(
                         hashMapOf(
                             "helper_name" to inputName.text.toString(),
@@ -46,7 +48,7 @@ class PersonalHelpFragment(val data: List<String>) : Fragment() {
                             "beneficiary_email" to data[1],
                             "beneficiary_phone" to data[2])
                     )
-                } else {
+                } else { // en caso de solicitar para si mismo
                     db.collection("beneficiary").document(inputTelephone.text.toString()).set(
                         hashMapOf(
                             "beneficiary_name" to inputName.text.toString(),
@@ -70,6 +72,7 @@ class PersonalHelpFragment(val data: List<String>) : Fragment() {
         }
     }
 
+    // Validar datos del usuario
     private fun validate(field: EditText, type: String = ""): Boolean {
         if (type == "phone" && field.text.toString().length != 10 ) {
             field.error = "10 numeros"

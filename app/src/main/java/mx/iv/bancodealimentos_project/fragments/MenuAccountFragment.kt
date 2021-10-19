@@ -13,18 +13,21 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import mx.iv.bancodealimentos_project.*
 
+/**
+ * Fragmento que contiene el menu de opciones de un usuario con cuenta registrada
+ */
 class MenuAccountFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
 
         val view = inflater.inflate(R.layout.fragment_menu_account, container, false)
 
         val btnMenu = view.findViewById<ImageButton>(R.id.menuAccountIbMenu)
 
+        // Agrega listeners a cada opción del menu
         btnMenu.setOnClickListener {
             val popupMenu = PopupMenu(it.context, it)
 
@@ -59,19 +62,16 @@ class MenuAccountFragment : Fragment() {
         return view
     }
 
+    // Confirmar que el usuario desea cerrar sesión
     private fun logOut() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setCancelable(true)
         builder.setTitle("Cerrar sesión")
-        builder.setMessage("¿Estas segurx que quieres cerrar sesión?")
+        builder.setMessage("¿Deseas cerrar sesión?")
 
-        builder.setNegativeButton(
-            "No"
-        ) { _, _ -> }
+        builder.setNegativeButton("No") { _, _ -> }
 
-        builder.setPositiveButton(
-            "Si"
-        ) { dialogInterface, _ ->
+        builder.setPositiveButton("Si") { dialogInterface, _ ->
             Firebase.auth.signOut()
             val intent = Intent(context, RegisterActivity::class.java)
             startActivity(intent)

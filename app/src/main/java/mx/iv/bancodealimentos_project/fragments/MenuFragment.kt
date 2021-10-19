@@ -12,7 +12,9 @@ import androidx.appcompat.widget.PopupMenu
 import mx.iv.bancodealimentos_project.*
 import java.lang.RuntimeException
 
-
+/**
+ * Fragmento con menu de usuario general
+ */
 class MenuFragment : Fragment() {
 
     private var listener : CallbackMenu? = null

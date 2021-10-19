@@ -10,6 +10,9 @@ import android.widget.Button
 import android.widget.EditText
 import mx.iv.bancodealimentos_project.R
 
+/**
+ * Fragmento con formulario de datos de la persona que desea ser beneficiario
+ */
 class ExternalHelpFragment() : Fragment() {
     private var listener: CheckboxFragment.CallbackHelp? = null
 
@@ -34,6 +37,7 @@ class ExternalHelpFragment() : Fragment() {
         return view
     }
 
+    // Valida que los datos ingresados por el usuario sean correctos
     private fun validate(field: EditText, type: String = ""): Boolean {
         if (type == "phone" && field.text.toString().length != 10 ) {
             field.error = "10 numeros"
