@@ -17,8 +17,8 @@ class DonationsAdapter(donationsList: ArrayList<DonationData>) : RecyclerView.Ad
     override fun onBindViewHolder(viewHolder: DonationsAdapterViewHolder, position: Int) {
         val donationItem: DonationData = listItems[position]
 
-        viewHolder.id.text = donationItem.id.toString()
-        viewHolder.amount.text = donationItem.amount.toString()
+        viewHolder.id.text = donationItem.id
+        viewHolder.amount.text = "$ ${donationItem.amount}.00"
         viewHolder.date.text = donationItem.date
     }
 

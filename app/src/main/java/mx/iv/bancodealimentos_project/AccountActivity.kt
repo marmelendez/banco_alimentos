@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import mx.iv.bancodealimentos_project.databinding.ActivityAccountBinding
+import mx.iv.bancodealimentos_project.fragments.DonationsListFragment
 import mx.iv.bancodealimentos_project.fragments.MenuAccountFragment
 
 class AccountActivity : AppCompatActivity(){
@@ -25,13 +26,6 @@ class AccountActivity : AppCompatActivity(){
         val transactionDonations = supportFragmentManager.beginTransaction()
         transactionDonations.add(R.id.accountFcContainer, donationsFragment, TAG_FRAGMENT)
         transactionDonations.commit()
-
-       /* donationsList = mutableListOf()
-        getDonationsList()
-        recyclerList = binding.accountRvList
-        recyclerList.layoutManager = LinearLayoutManager(this)
-        val favoritesAdapter = DonationsAdapter(donationsList as ArrayList<DonationData>)
-        recyclerList.adapter = favoritesAdapter*/
 
         if (!checkCurrentUser()) {
             binding.accountTitle.text = "Para ingresar a este apartado es necesario que inicies sesión primero"

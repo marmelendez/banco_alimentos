@@ -1,7 +1,7 @@
 package mx.iv.bancodealimentos_project.helper
 
 data class DonationData(
-    val id: Int,
-    val amount: Float,
+    val id: String,
+    val amount: String,
     val date: String,
 )
