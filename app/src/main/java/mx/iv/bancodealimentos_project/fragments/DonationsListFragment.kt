@@ -73,7 +73,6 @@ class DonationsListFragment : Fragment() {
             .addOnSuccessListener { documents ->
                 for (document in documents) {
                     donationsList.add(DonationData(document.id, document.data["amount"].toString(), document.data["date"].toString()))
-                    //Toast.makeText(context, document.id + " => " + document.data["amount"].toString() + "  " + document.data["date"].toString(), Toast.LENGTH_SHORT).show()
                 }
                 recyclerList = view.findViewById(R.id.fragDonationsRvRecycler)
                 recyclerList.layoutManager = LinearLayoutManager(context)

@@ -2,14 +2,22 @@ package mx.iv.bancodealimentos_project
 
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import com.paypal.android.sdk.payments.*
 import mx.iv.bancodealimentos_project.databinding.ActivityDonationsBinding
 import mx.iv.bancodealimentos_project.fragments.MenuFragment
 import org.json.JSONException
 import java.math.BigDecimal
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 class DonationsActivity : AppCompatActivity(),  MenuFragment.CallbackMenu  {
 
@@ -22,7 +30,9 @@ class DonationsActivity : AppCompatActivity(),  MenuFragment.CallbackMenu  {
 
     private lateinit var binding: ActivityDonationsBinding
     private lateinit var amount: String
+    private val db = FirebaseFirestore.getInstance()
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDonationsBinding.inflate(layoutInflater)
@@ -44,7 +54,24 @@ class DonationsActivity : AppCompatActivity(),  MenuFragment.CallbackMenu  {
         binding.donationsBtnDonate.setOnClickListener {
             amount = binding.donationsEtAmount.text.toString()
             if (amount.isNotBlank() && amount.toDouble() > 0){
+
+                val current = LocalDateTime.now()
+                val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+                val formatted = current.format(formatter)
+
+                var user = "generalUser"
+
+                if (Firebase.auth.currentUser != null) {
+                    user = Firebase.auth.currentUser!!.email.toString()
+                }
+                db.collection("donations").document().set(
+                    hashMapOf("email" to user,
+                                "amount" to amount,
+                                "date" to formatted)
+                )
+                Toast.makeText(this, "Donacion guardada", Toast.LENGTH_SHORT).show()
                 //throw RuntimeException("Test Crash")
+
                 processPayment()
             } else {
                 Toast.makeText(this, "Porfavor introduce una cantidad", Toast.LENGTH_SHORT).show()
