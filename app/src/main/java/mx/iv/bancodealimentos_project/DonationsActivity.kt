@@ -2,6 +2,7 @@ package mx.iv.bancodealimentos_project
 
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -69,10 +70,13 @@ class DonationsActivity : AppCompatActivity(),  MenuFragment.CallbackMenu  {
                                 "amount" to amount,
                                 "date" to formatted)
                 )
-                Toast.makeText(this, "Donacion guardada", Toast.LENGTH_SHORT).show()
-                //throw RuntimeException("Test Crash")
+                val url = "https://bdalimentos.org/make-a-donation/?cause_id=8492"
+                val uri: Uri = Uri.parse(url)
+                val inte = Intent(Intent.ACTION_VIEW, uri)
+                startActivity(inte)
 
-                processPayment()
+                //throw RuntimeException("Test Crash")
+                //processPayment()
             } else {
                 Toast.makeText(this, "Porfavor introduce una cantidad", Toast.LENGTH_SHORT).show()
             }
