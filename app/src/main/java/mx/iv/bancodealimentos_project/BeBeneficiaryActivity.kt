@@ -15,10 +15,7 @@ class BeBeneficiaryActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
         binding = ActivityBeBeneficiaryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val menuFragment = MenuFragment()
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.beneficiaryMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
-
+        // Listener para mostrar formulario de ser beneficiario
         binding.beneficiaryBtnBeneficiary.setOnClickListener {
             val intent = Intent(this, AskHelpActivity::class.java)
             startActivity(intent)
@@ -27,9 +24,5 @@ class BeBeneficiaryActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
 
     override fun returnAct(){
         finish()
-    }
-
-    companion object{
-        private const val TAG_FRAGMENT= "fragment"
     }
 }

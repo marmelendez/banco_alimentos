@@ -15,16 +15,14 @@ class AboutUsActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
         binding = ActivityAboutusBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val menuFragment = MenuFragment()
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.aboutUsCvMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
-
+        // Listener del boton de ¿quienes somos?
         binding.aboutUsCDinfo.setOnClickListener {
             val intent = Intent(it.context, AboutUsInfoActivity::class.java)
             intent.putExtra("id", "info")
             startActivity(intent)
         }
 
+        // Listener del boton de datos informativos
         binding.aboutUsCDdata.setOnClickListener {
             val intent = Intent(it.context, AboutUsInfoActivity::class.java)
             intent.putExtra("id", "data")
@@ -34,9 +32,5 @@ class AboutUsActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
 
     override fun returnAct(){
         finish()
-    }
-
-    companion object{
-        private const val TAG_FRAGMENT = "fragment"
     }
 }

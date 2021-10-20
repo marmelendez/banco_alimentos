@@ -16,11 +16,7 @@ class CollectionPointActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
         binding = ActivityCollectionPointBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val menuFragment = MenuFragment()
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.collectionMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
-        transaction.commit()
-
+        //  GOOGLE MAPS
         val mapFragment = MapFragment()
         val transaction2 = supportFragmentManager.beginTransaction()
         transaction2.add(R.id.collectionMap, mapFragment, TAG_FRAGMENT)
@@ -35,6 +31,4 @@ class CollectionPointActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
     companion object {
         private const val TAG_FRAGMENT = "fragment"
     }
-
-
 }

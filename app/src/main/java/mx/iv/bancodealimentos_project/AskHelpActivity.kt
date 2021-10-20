@@ -9,11 +9,7 @@ class AskHelpActivity : AppCompatActivity(), MenuFragment.CallbackMenu, Checkbox
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ask_help)
 
-        val menuFragment = MenuFragment()
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.askHelpMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
-        transaction.commit()
-
+        // Mostrar fragmento con dos checkbox
         val checkbox = CheckboxFragment()
         val transact = supportFragmentManager.beginTransaction()
         transact.add(R.id.askHelpFragmentContainer, checkbox, TAG_FRAGMENT)
@@ -23,7 +19,6 @@ class AskHelpActivity : AppCompatActivity(), MenuFragment.CallbackMenu, Checkbox
     override fun returnAct() {
         finish()
     }
-
 
     override fun replaceExternalHelpFragment() {
         val currentFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT)

@@ -6,7 +6,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import mx.iv.bancodealimentos_project.databinding.ActivityAccountBinding
 import mx.iv.bancodealimentos_project.fragments.DonationsListFragment
-import mx.iv.bancodealimentos_project.fragments.MenuAccountFragment
 
 class AccountActivity : AppCompatActivity(){
 
@@ -17,16 +16,13 @@ class AccountActivity : AppCompatActivity(){
         binding = ActivityAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val menuFragment = MenuAccountFragment()
-        val transactionMenu = supportFragmentManager.beginTransaction()
-        transactionMenu.add(R.id.accountMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
-        transactionMenu.commit()
-
+        // Mostrar lista de donaciones del usuario
         val donationsFragment = DonationsListFragment()
         val transactionDonations = supportFragmentManager.beginTransaction()
         transactionDonations.add(R.id.accountFcContainer, donationsFragment, TAG_FRAGMENT)
         transactionDonations.commit()
 
+        // Checar si hay un usuario registrado o no
         if (!checkCurrentUser()) {
             binding.accountTitle.text = "Para ingresar a este apartado es necesario que inicies sesión primero"
             binding.accountTitle.textSize = 10f

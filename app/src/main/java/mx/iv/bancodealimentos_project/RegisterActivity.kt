@@ -31,13 +31,6 @@ class RegisterActivity : AppCompatActivity(), LogInFragment.Callback, MenuFragme
 
         auth = Firebase.auth
 
-        // FRAGMENTO DE MENU
-        // Muestra el fragmento de menu desde el inicio
-        val menuFragment = MenuFragment()
-        val transactionMenu = supportFragmentManager.beginTransaction()
-        transactionMenu.add(R.id.registerMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
-        transactionMenu.commit()
-
         // FRAGMENTO DE INICIO/REGISTRO
         // Declaramos nuestros fragmentos de la clase LogIn y SignIn
         loginFragment = LogInFragment()

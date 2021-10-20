@@ -15,10 +15,6 @@ class VolunteerActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
         binding = ActivityVolunteerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val menuFragment = MenuFragment()
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.volunteerMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
-
         binding.volunteerBtnVolunteer.setOnClickListener {
             val intent = Intent(this, BeVolunteerActivity::class.java)
             startActivity(intent)
@@ -27,9 +23,5 @@ class VolunteerActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
 
     override fun returnAct(){
         finish()
-    }
-
-    companion object{
-        private const val TAG_FRAGMENT = "fragment"
     }
 }

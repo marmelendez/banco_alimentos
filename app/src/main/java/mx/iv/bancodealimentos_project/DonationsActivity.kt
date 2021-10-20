@@ -39,23 +39,19 @@ class DonationsActivity : AppCompatActivity(),  MenuFragment.CallbackMenu  {
         binding = ActivityDonationsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // FRAGMENTO DE MENU
-        // Muestra el fragmento de menu desde el inicio
-        val menuFragment = MenuFragment()
-        val transactionMenu = supportFragmentManager.beginTransaction()
-        transactionMenu.add(R.id.donationsMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
-        transactionMenu.commit()
-
         //PAYPAL SERVICE
         val intent = Intent(this, PayPalService::class.java)
         intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config)
         startService(intent)
 
 
+        // Boton de donaciones
         binding.donationsBtnDonate.setOnClickListener {
             amount = binding.donationsEtAmount.text.toString()
+            // Validar que la cantidad ingresada sea correcta
             if (amount.isNotBlank() && amount.toDouble() > 0){
 
+                // Datos a guardar de la donación
                 val current = LocalDateTime.now()
                 val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
                 val formatted = current.format(formatter)
@@ -65,11 +61,14 @@ class DonationsActivity : AppCompatActivity(),  MenuFragment.CallbackMenu  {
                 if (Firebase.auth.currentUser != null) {
                     user = Firebase.auth.currentUser!!.email.toString()
                 }
+                // Guardar datos de donación en Firestore
                 db.collection("donations").document().set(
                     hashMapOf("email" to user,
                                 "amount" to amount,
                                 "date" to formatted)
                 )
+
+                // Mostrar página para realizar una donación del Banco de Alimentos
                 val url = "https://bdalimentos.org/make-a-donation/?cause_id=8492"
                 val uri: Uri = Uri.parse(url)
                 val inte = Intent(Intent.ACTION_VIEW, uri)
@@ -128,9 +127,5 @@ class DonationsActivity : AppCompatActivity(),  MenuFragment.CallbackMenu  {
         } else if(resultCode == RESULT_CANCELED) {
             Toast.makeText(this, "No valido", Toast.LENGTH_SHORT).show()
         }
-    }
-
-    companion object {
-        private const val TAG_FRAGMENT = "fragment"
     }
 }

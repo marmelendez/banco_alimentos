@@ -11,11 +11,7 @@ class BeVolunteerActivity : AppCompatActivity(), MenuFragment.CallbackMenu, BeVo
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_be_volunteer)
 
-        val menuFragment = MenuFragment()
-        val transact = supportFragmentManager.beginTransaction()
-        transact.add(R.id.beVolunteerMenuFragmentContainer, menuFragment, TAG_FRAGMENT)
-        transact.commit()
-
+        // Mostrar fragmento con formulario de ser voluntario
         val serVoluntario = BeVolunteerFragment()
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.beVolunteerOptions, serVoluntario, TAG_FRAGMENT)

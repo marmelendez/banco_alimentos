@@ -15,12 +15,14 @@ class AboutUsInfoActivity : AppCompatActivity(), MenuFragment.CallbackMenu {
         binding = ActivityAboutUsInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Obtener extra para ver cual fragmento mostrar
         val extra = intent.extras
         var id = "info"
         if (extra != null) {
             id = extra.getString("id").toString()
         }
 
+        // Mostrar fragmento de sliders
         val aboutUsFragment = AboutUsDataFragment(id)
         val transaction2 = supportFragmentManager.beginTransaction()
         transaction2.add(R.id.aboutUsInfoCvAboutUsFragmentContainer, aboutUsFragment, TAG_FRAGMENT)
